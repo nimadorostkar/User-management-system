@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
 
-    
+
 <!-- Mirrored from themesbrand.com/minible/layouts/horizontal/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 Jan 2021 11:50:25 GMT -->
 <head>
 
@@ -52,7 +52,7 @@
                     <div class="d-flex">
                         <!-- LOGO -->
                         <div class="navbar-brand-box">
-                            <a href="{% url 'home' %}" class="logo logo-light">
+                            <a href="{% url 'dashboard' %}" class="logo logo-light">
                                 <span class="logo-sm">
                                     {% comment %} <img src="{% static 'dashboard/images/logo-sm.png' %}" alt="" height="30"> {% endcomment %}
                                     <h2 style="color: white;">Logo Placeholder</h2>
@@ -78,7 +78,7 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
                                 aria-labelledby="page-header-search-dropdown">
-                    
+
                                 <form class="p-3">
                                     <div class="form-group m-0">
                                         <div class="input-group">
@@ -202,12 +202,12 @@
                                 <a class="dropdown-item" href="{% url 'account_logout' %}"><i class="uil uil-sign-out-alt font-size-18 align-middle mr-1 text-muted"></i> <span class="align-middle">Sign out</span></a>
                             </div>
                         </div>
-            
+
                     </div>
                 </div>
                 <div class="container-fluid">
                     <div class="topnav">
-                        <nav class="navbar navbar-light navbar-expand-lg topnav-menu">    
+                        <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
                             <div class="collapse navbar-collapse" id="topnav-menu-content">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
@@ -227,14 +227,14 @@
                                             <i class="uil-thumbs-up mr-2"></i> Recommendations
                                         </a>
                                     </li>
-     
+
                                 </ul>
                             </div>
                         </nav>
                     </div>
                 </div>
             </header>
-    
+
             <!-- Investment Overview -->
             <div id="investment-overview" class="tabcontent">
                 <div class="main-content">
@@ -263,7 +263,7 @@
                                 <div class="col-12">
                                     <div class="tradingview-widget-container">
                                         <div class="tradingview-widget-container__widget"></div>
-                                        <div class="tradingview-widget-copyright"></div>                                       
+                                        <div class="tradingview-widget-copyright"></div>
                                         <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
                                             {
                                                 "symbols": [
@@ -389,8 +389,8 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <h4 class="card-title mb-4">Your Holdings
-                                            <button 
-                                                style="float: right; margin-bottom: 10px; background-color: #50a5f1; border-color: #50a5f1;" 
+                                            <button
+                                                style="float: right; margin-bottom: 10px; background-color: #50a5f1; border-color: #50a5f1;"
                                                 type="button" class="btn btn-primary btn-sm-12 btn-md-6 btn-rounded waves-effect waves-light"
                                                 data-toggle="modal" data-target="#myModal">
                                                 <i class="fa fa-plus"></i> &nbsp;Add Stock Holding
@@ -475,7 +475,7 @@
                                                             <td class="text-center font-weight-bold" style="font-size: 20px;">PNL</td>
                                                             <td class="text-center font-weight-bold" style="font-size: 20px;">Net Change</td>
                                                             <td class="text-center">
-                                                                <button 
+                                                                <button
                                                                     type="button" class="btn btn-primary btn-md btn-rounded waves-effect waves-light"
                                                                     data-toggle="modal" data-target="#stockdetails-{{ c.CompanySymbol }}" onclick="getFinancials('{{ c.CompanySymbol }}')">
                                                                     View Details
@@ -1051,7 +1051,7 @@
                 currentValueHeading.innerHTML = currentValue;
                 var unrealizedPNLHeading = document.getElementById("unrealized-pnl");
                 var growthHeading = document.getElementById("growth");
-                
+
                 if (unrealizedPNL > 0) {
                     unrealizedPNLHeading.style.color = ":#34c38f";
                     growthHeading.style.color = ":#34c38f";
@@ -1228,11 +1228,11 @@
 
                 if(dd<10) {
                     dd = '0'+dd
-                } 
+                }
 
                 if(mm<10) {
                     mm = '0'+mm
-                } 
+                }
 
                 today = yyyy + '-' + mm + '-' + dd;
                 document.getElementById("example-date-input").value = today;
