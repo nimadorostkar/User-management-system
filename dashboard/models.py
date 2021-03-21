@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 
 class Notice(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=200, unique=True)
     updated_on = models.DateTimeField(auto_now= True)
     content = models.TextField()
@@ -22,7 +23,6 @@ class Notice(models.Model):
 
 class Profile(models.Model):
   user = models.OneToOneField(User, on_delete=models.CASCADE)
-  notice = models.ForeignKey(Notice, on_delete=models.CASCADE, null=True, blank=True)
   image=models.ImageField(upload_to='image/profile', default='image/Default.png' ,null=True, blank=True,verbose_name = "تصویر")
   signature=models.ImageField(upload_to='image/signature',null=True, blank=True)
 
