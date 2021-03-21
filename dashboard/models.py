@@ -5,6 +5,8 @@ from django.db.models import JSONField
 class Portfolio(models.Model):
   user = models.OneToOneField(User, on_delete=models.CASCADE)
   total_investment = models.FloatField(default=0)
+  name = models.CharField(max_length=100,null=True, blank=True)
+
 
   def update_investment(self):
     investment = 0
