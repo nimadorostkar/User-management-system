@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 
-class Post(models.Model):
+class Notice(models.Model):
     title = models.CharField(max_length=200, unique=True)
     updated_on = models.DateTimeField(auto_now= True)
     content = models.TextField()
@@ -20,10 +20,9 @@ class Post(models.Model):
 
 
 
-
 class Profile(models.Model):
   user = models.OneToOneField(User, on_delete=models.CASCADE)
-  notice = models.TextField(max_length=600,null=True, blank=True)
+  notice = models.ForeignKey(Notice, on_delete=models.CASCADE, null=True, blank=True)
   image=models.ImageField(upload_to='image/profile', default='image/Default.png' ,null=True, blank=True,verbose_name = "تصویر")
   signature=models.ImageField(upload_to='image/signature',null=True, blank=True)
 

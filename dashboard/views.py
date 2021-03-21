@@ -9,6 +9,6 @@ from .models import Profile
 
 @login_required
 def dashboard(request):
-  name = Profile.objects.filter(user=request.user)
+  notice = Profile.objects.filter(user=request.user)
   context = {'name': name }
   return render(request, 'dashboard/dashboard.html', context)
