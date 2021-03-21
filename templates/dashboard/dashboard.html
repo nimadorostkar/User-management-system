@@ -145,16 +145,16 @@
 
                             <br><br>
 
-                          {% for Profile in notice %}
+                          {% for Notice in notices %}
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="card">
                                         <div class="card-body">
-                                             <h4 class="card-title mb-4">{{ Profile.notice.title }}</h4>
+                                             <h4 class="card-title mb-4">{{ Notice.title }}</h4>
                                              <div class="table-responsive">
-                                                <p class="text-muted mb-0">{{ Profile.notice.content }}</p>
+                                                <p class="text-muted mb-0">{{ Notice.content }}</p>
                                                 <br>
-                                                <p> <small> {{ Profile.notice.updated_on }} </small> </p>
+                                                <p> <small> {{ Notice.updated_on }} </small> </p>
                                               </div>
                                         </div>
                                     </div>
