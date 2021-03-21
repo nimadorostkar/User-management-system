@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 
 class Notice(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ManyToManyField(User)
     title = models.CharField(max_length=200, unique=True)
     updated_on = models.DateTimeField(auto_now= True)
     content = models.TextField()
