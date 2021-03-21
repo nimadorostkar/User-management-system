@@ -25,7 +25,7 @@ def get_alphavantage_key():
 
 @login_required
 def dashboard(request):
-  name1 = Portfolio.objects.all()
+  name = Portfolio.objects.all()
   portfolio = Portfolio.objects.get(user=request.user)
   portfolio.update_investment()
   holding_companies = StockHolding.objects.filter(portfolio=portfolio)
@@ -45,7 +45,7 @@ def dashboard(request):
       'NumberShares': number_shares,
       'InvestmentAmount': investment_amount,
       'AverageCost': average_cost,
-      'name1': name1,
+      'name': name,
     })
     stocks[0].append(round((investment_amount / portfolio.total_investment) * 100, 2))
     stocks[1].append(company_symbol)
