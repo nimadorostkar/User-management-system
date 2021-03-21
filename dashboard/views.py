@@ -10,6 +10,6 @@ from .models import Profile, Notice
 @login_required
 def dashboard(request):
   profile = Profile.objects.filter(user=request.user)
-  notices = Notice.objects.order_by('-created_on')
+  notices = Notice.objects.all()
   context = {'profile': profile }
   return render(request, 'dashboard/dashboard.html', context)
