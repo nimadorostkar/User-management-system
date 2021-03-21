@@ -143,179 +143,29 @@
 
 
 
+                            <br><br>
 
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h4 class="card-title mb-4">Your Holdings
-                                            <button
-                                                style="float: right; margin-bottom: 10px; background-color: #50a5f1; border-color: #50a5f1;"
-                                                type="button" class="btn btn-primary btn-sm-12 btn-md-6 btn-rounded waves-effect waves-light"
-                                                data-toggle="modal" data-target="#myModal">
-                                                <i class="fa fa-plus"></i> &nbsp;Add Stock Holding
-                                            </button></h4>
-
-                                            <!-- Modal -->
-                                            <div id="myModal" class="modal fade" role="dialog">
-                                                <div class="modal-dialog modal-dialog-centered modal-lg">
-                                                    <!-- Modal content-->
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h4 class="modal-title">Add Stock to your Portfolio</h4>
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <form id="add-holding-form" method="post" action="{% url 'add-holding' %}">
-                                                                {% csrf_token %}
-                                                                <div class="form-group row mb-4">
-                                                                    <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Stock Ticker :</label>
-                                                                    <div class="col-sm-9">
-                                                                        <select name="company" class="form-control select2 select2-hidden-accessible" id="company" data-select2-id="1" tabindex="-1" aria-hidden="true"></select>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row mb-4">
-                                                                    <label for="example-date-input" class="col-sm-3 col-form-label">Date</label>
-                                                                    <div class="col-sm-9">
-                                                                        <input name="date" class="form-control" type="date" value="" id="example-date-input" max="">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row mb-4">
-                                                                    <label for="example-date-input" class="col-sm-3 col-form-label">Number of Stocks</label>
-                                                                    <div class="col-sm-9">
-                                                                        <input name="number-stocks" class="form-control" type="number" value="0" min="0" step="1" id="number-stocks">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mt-4 justify-content-center">
-                                                                    <button type="submit" class="btn btn-primary w-md">Submit</button>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
+                                            <h4 class="card-title mb-4">Your notifications</h4>
                                             <div class="table-responsive">
-                                                <table class="table table-centered table-nowrap mb-0" id="portfolio-table">
-                                                    <thead class="thead-light">
-                                                        <tr>
-                                                            <th class="text-center">Company Name</th>
-                                                            <th class="text-center">Number of Shares</th>
-                                                            <th class="text-center">Average Cost</th>
-                                                            <th class="text-center">Last Trading Price (LTP)</th>
-                                                            <th class="text-center">Invested Amount</th>
-                                                            <th class="text-center" class="font-weight-bold">P&L</th>
-                                                            <th class="text-center">Net Change</th>
-                                                            <th class="text-center">Details</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        {% for c in holdings %}
-                                                        <tr id="{{ c.CompanySymbol }}">
-                                                            <td class="text-body font-weight-bold">
-                                                                <div class="tradingview-widget-container">
-                                                                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
-                                                                        {
-                                                                            "symbol": "NASDAQ:{{c.CompanySymbol}}",
-                                                                            "width": 350,
-                                                                            "colorTheme": "light",
-                                                                            "isTransparent": true,
-                                                                            "locale": "in"
-                                                                        }
-                                                                    </script>
-                                                                </div>
-                                                            </td>
-                                                            <td class="text-center font-weight-bold" style="font-size: 20px;">{{ c.NumberShares }}</td>
-                                                            <td class="text-center font-weight-bold" style="font-size: 20px;">$ {{ c.AverageCost | floatformat:2 }}</td>
-                                                            <td class="text-center font-weight-bold" style="font-size: 20px;">LTP</td>
-                                                            <td class="text-center font-weight-bold" style="font-size: 20px;">$ {{ c.InvestmentAmount | floatformat:2 }}</td>
-                                                            <td class="text-center font-weight-bold" style="font-size: 20px;">PNL</td>
-                                                            <td class="text-center font-weight-bold" style="font-size: 20px;">Net Change</td>
-                                                            <td class="text-center">
-                                                                <button
-                                                                    type="button" class="btn btn-primary btn-md btn-rounded waves-effect waves-light"
-                                                                    data-toggle="modal" data-target="#stockdetails-{{ c.CompanySymbol }}" onclick="getFinancials('{{ c.CompanySymbol }}')">
-                                                                    View Details
-                                                                </button>
-                                                            </td>
-                                                        </tr>
-                                                        {% endfor %}
-                                                    </tbody>
-                                                </table>
+                                                {% for Profile in name %}
+                                                  <p class="text-muted mb-0">{{ Profile.name }}</p>
+                                                {% endfor %}
                                             </div>
-                                            <!-- end table-responsive -->
-
-                                            {% for c in holdings %}
-                                                <!-- Modal -->
-                                                <div id="stockdetails-{{ c.CompanySymbol }}" class="modal fade" role="dialog">
-                                                    <div class="modal-dialog modal-dialog-centered modal-xl">
-                                                        <!-- Modal content-->
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h4 class="modal-title">{{ c.CompanyName }} ({{ c.CompanySymbol }})</h4>
-                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <div class="col-12 justify-content-center">
-                                                                    <div class="tradingview-widget-container">
-                                                                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-info.js" async>
-                                                                        {
-                                                                            "symbol": "NASDAQ:{{ c.CompanySymbol }}",
-                                                                            "width": "100%",
-                                                                            "locale": "in",
-                                                                            "colorTheme": "light",
-                                                                            "isTransparent": false
-                                                                        }
-                                                                        </script>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-12 justify-content-center">
-                                                                    <div class="tradingview-widget-container">
-                                                                        <div id="tradingview_{{ c.CompanySymbol }}"></div>
-                                                                        <div class="tradingview-widget-copyright">&nbsp;</div>
-                                                                        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-                                                                        <script type="text/javascript">
-                                                                            new TradingView.widget(
-                                                                                {
-                                                                                    "width": "100%",
-                                                                                    "height": 610,
-                                                                                    "symbol": "NASDAQ:{{ c.CompanySymbol }}",
-                                                                                    "interval": "D",
-                                                                                    "timezone": "Etc/UTC",
-                                                                                    "theme": "light",
-                                                                                    "style": "1",
-                                                                                    "locale": "in",
-                                                                                    "toolbar_bg": "#f1f3f6",
-                                                                                    "enable_publishing": false,
-                                                                                    "withdateranges": true,
-                                                                                    "container_id": "tradingview_{{ c.CompanySymbol }}"
-                                                                                }
-                                                                            );
-                                                                        </script>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row" id="financials-{{ c.CompanySymbol }}">
-                                                                </div>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            {% endfor %}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- end row -->
+
                         </div> <!-- container-fluid -->
                     </div>
                     <!-- End Page-content -->
+
+
 
 
                     <footer class="footer">
