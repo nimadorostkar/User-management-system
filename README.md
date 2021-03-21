@@ -1,4 +1,4 @@
-# Profile-Management-System
+# Portfolio-Management-System
 
 ## Motivation
 - In these unprecedented times many people have lost their wealth because of wrong investment decisions made, which are encouraged by human emotions.
@@ -12,6 +12,7 @@ Design and create a portfolio management system which aims to :
 - Implement various trading & investing strategies using technical & fundamental analysis.
 - Optimize strategies using machine learning algorithms.
 - Use Algorithmic Trading to remove the psychological & emotional bias faced during the investment process.
+
 
 
 
