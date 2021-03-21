@@ -40,3 +40,8 @@ Design and create a portfolio management system which aims to :
 - [ ] Database Models (Under Progress)
   - [x] Portfolio Model
   - [x] StockHoldings Model
+
+
+
+
+ref:  https://github.com/bpagare6/Portfolio-Management-System
