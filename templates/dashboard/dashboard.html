@@ -227,8 +227,10 @@
                                                 <div id="current-value-chart"></div>
                                             </div>
                                             <div>
-                                                <h4 class="mb-1 mt-1" id="current-value">$ <span data-plugin="counterup"> n </span></h4>
-                                                <p class="text-muted mb-0">Current Value</p>
+                                                <h4 class="mb-1 mt-1" id="current-value">tast: <span data-plugin="counterup"> n </span></h4>
+                                                {% for Portfolio in name %}
+                                                <p class="text-muted mb-0">{{ Portfolio.name }}</p>
+                                                {% endfor %}
                                             </div>
                                         </div>
                                     </div>
