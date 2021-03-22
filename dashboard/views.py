@@ -29,7 +29,8 @@ def dashboard(request):
             user_form.save()
             profile_form.save()
             messages.success(request, _('Your profile was successfully updated!'))
-            return redirect('dashboard.html')
+            context = {'profile': profile,'notices': notices,'user_form': user_form,'profile_form': profile_form }
+            return render(request, 'dashboard/dashboard.html', context)
         else:
             messages.error(request, _('Please correct the error below.'))
   else:
