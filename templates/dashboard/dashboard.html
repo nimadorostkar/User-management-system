@@ -221,7 +221,6 @@
 					<form method="POST" action="">
 					  {% csrf_token %}
             {% comment %} {{ user_form.as_p }} {% endcomment %}
-            {{ user_form.first_name }}
             {{ profile_form.as_p }}
             <input class="btn login_btn" type="submit" value=" Update ">
 		    	  {{form.errors}}
