@@ -12,7 +12,7 @@ class ProfileForm(ModelForm):
 		model = Profile
 		fields = '__all__'
 
-class CreateUserForm(UserCreationForm):
+class UserForm(UserCreationForm):
 	class Meta:
 		model = User
 		fields = ['username', 'email', 'password1', 'password2']
