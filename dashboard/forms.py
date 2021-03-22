@@ -10,7 +10,9 @@ from .models import Profile
 class ProfileForm(ModelForm):
 	class Meta:
 		model = Profile
-		fields = '__all__'
+		fields = ['bank_name', 'account_holder', 'address']
+        #fields = '__all__'
+
 
 class UserForm(UserCreationForm):
 	class Meta:
