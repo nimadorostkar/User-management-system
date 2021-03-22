@@ -213,7 +213,7 @@
                                 </div>
                             </div>
                             <!-- end page title -->
-    identity_number:  {{ user.profile.identity_number }}  <br> username:{{ user.username }}  <br> bank_name: {{ user.profile.bank_name }} <br> address: {{ user.profile.address }}
+    first name:  {{ user.first_name }} <br> identity_number:  {{ user.profile.identity_number }}  <br> username:{{ user.username }}  <br> bank_name: {{ user.profile.bank_name }} <br> address: {{ user.profile.address }}
 
     <br> <br> <hr>
 
@@ -221,6 +221,7 @@
 					<form method="POST" action="">
 					  {% csrf_token %}
             {% comment %} {{ user_form.as_p }} {% endcomment %}
+            {{ user_form.first_name }}
             {{ profile_form.as_p }}
             <input class="btn login_btn" type="submit" value=" Update ">
 		    	  {{form.errors}}
