@@ -10,7 +10,6 @@ from .forms import ProfileForm, UserForm
 from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
 from django import forms
-from django.conf import settings
 
 
 
@@ -43,7 +42,6 @@ def dashboard(request):
   'user_form': user_form,
   'profile_form': profile_form }
   return render(request, 'dashboard/dashboard.html', context)
-
 
 
 
