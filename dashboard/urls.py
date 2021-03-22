@@ -2,5 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('/<int:id>/', views.dashboard, name='dashboard'),
+    path('', views.dashboard, name='dashboard'),
 ]
+
+
+#/<int:id>/

@@ -45,8 +45,8 @@ class Profile(models.Model):
   def __str__(self):
     return "پروفایل : " + str(self.user)
 
-  def get_absolute_url(self):
-        return reverse('dashboard:',args=[self.id])
+ # def get_absolute_url(self):
+        #return reverse('App:material_detail',args=[self.id])
 
 
 
