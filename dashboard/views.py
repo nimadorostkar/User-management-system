@@ -22,18 +22,18 @@ def dashboard(request):
   notices = models.Notice.objects.filter(user=request.user).order_by('-created_on')
 
   if request.method == 'POST':
-      user_form = UserForm(request.POST, instance=request.user)
-      profile_form = ProfileForm(request.POST, instance=request.user.profile)
-      if user_form.is_valid() and profile_form.is_valid():
-          user_form.save()
-          profile_form.save()
-          messages.success(request, _('Your profile was successfully updated!'))
-          return redirect('settings:dashboard')
-      else:
-          messages.error(request, _('Please correct the error below.'))
-  else:
-      user_form = UserForm(instance=request.user)
-      profile_form = ProfileForm(instance=request.user.profile)
+        user_form = UserForm(request.POST, instance=request.user)
+        profile_form = ProfileForm(request.POST, instance=request.user.profile)
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.success(request, _('Your profile was successfully updated!'))
+            return redirect('settings:profile')
+        else:
+            messages.error(request, _('Please correct the error below.'))
+    else:
+        user_form = UserForm(instance=request.user)
+        profile_form = ProfileForm(instance=request.user.profile)
 
   context = {
   'profile': profile,
@@ -44,21 +44,7 @@ def dashboard(request):
 
 
 
-    if request.method == 'POST':
-        user_form = EditProfileForm(request.POST, instance=request.user)
-        profile_form = UserProfileForm(request.POST, instance=request.user.UserProfile.user)
 
-        if user_form.is_valid() and profile_form.is_valid():
-            user = user_form.save(commit=False)
-            #user.username = user.email
-            user.save()
-            profile = profile_form.save(commit=False)
-            profile.user = user
-            profile.save()
-            return redirect('/account/profile')
-    else:
-        profile_form = UserProfileForm(instance=request.user.userprofile)
-        user_form = EditProfileForm(instance=request.user)
 
 
 
