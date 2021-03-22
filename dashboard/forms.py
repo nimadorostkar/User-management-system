@@ -11,8 +11,19 @@ from django.contrib.auth.forms import UserCreationForm
 class ProfileForm(forms.ModelForm):
 	class Meta:
 		model = Profile
-		fields = ['address', 'father_name', 'bank_name' ]
-        #fields = '__all__'
+		fields = [
+        'father_name',
+        'identity_number',
+        'national_code',
+        'address',
+        'bank_name',
+        'account_holder',
+        'cardـnumber',
+        'user_photo',
+        'signature',
+        'personalـphoto'
+        ]
+
 
 
 class UserForm(UserCreationForm):
