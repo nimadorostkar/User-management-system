@@ -13,8 +13,8 @@ class Notice(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name = "ایستگاه"
-        verbose_name_plural = " ایستگاه ها"
+        verbose_name = "اعلان"
+        verbose_name_plural = " اعلانات "
 
     class Meta:
         ordering = ['-created_on']
@@ -39,8 +39,17 @@ class Profile(models.Model):
   account_holder = models.CharField(max_length=150,null=True, blank=True,verbose_name = " نام صاحب حساب ")
 
   class Meta:
-      verbose_name = "ایستگاه"
-      verbose_name_plural = " ایستگاه ها"
+      verbose_name = "پروفایل"
+      verbose_name_plural = " پروفایل ها "
 
   def __str__(self):
-    return "User : " + str(self.user)
+    return "پروفایل : " + str(self.user)
+
+
+
+
+
+
+
+
+#------------------------------------------------------------------------------
