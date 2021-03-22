@@ -13,6 +13,10 @@ class Notice(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
+        verbose_name = "ایستگاه"
+        verbose_name_plural = " ایستگاه ها"
+
+    class Meta:
         ordering = ['-created_on']
 
     def __str__(self):
@@ -33,6 +37,10 @@ class Profile(models.Model):
   bank_name = models.CharField(max_length=50,null=True, blank=True,verbose_name = " نام بانک")
   cardـnumber = models.CharField(max_length=16,null=True, blank=True,verbose_name = " شماره کارت بانک  ")
   account_holder = models.CharField(max_length=150,null=True, blank=True,verbose_name = " نام صاحب حساب ")
+
+  class Meta:
+      verbose_name = "ایستگاه"
+      verbose_name_plural = " ایستگاه ها"
 
   def __str__(self):
     return "User : " + str(self.user)
