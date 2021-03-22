@@ -12,5 +12,5 @@ from . import models
 def dashboard(request):
   profile = models.Profile.objects.filter(user=request.user)
   notices = models.Notice.objects.filter(user=request.user).order_by('-created_on')
-  context = {'profile': profile }
+  context = {'profile': profile, 'notices':notices }
   return render(request, 'dashboard/dashboard.html', context)
