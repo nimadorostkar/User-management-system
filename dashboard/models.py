@@ -32,6 +32,7 @@ class Notice(models.Model):
 class Profile(models.Model):
   user = models.OneToOneField(User, on_delete=models.CASCADE)
   user_photo=models.ImageField(upload_to='user_uploads/user_photo',default='user_uploads/user_photo/default.png',null=True, blank=True,verbose_name = "تصویر")
+  father_name = models.CharField(max_length=50,null=True, blank=True,verbose_name = " نام پدر  ")
   signature=models.ImageField(upload_to='user_uploads/signature',default='user_uploads/signature/default.png',null=True, blank=True,verbose_name = "امضاء")
   personalـphoto=models.ImageField(upload_to='user_uploads/personalـphoto',default='user_uploads/personalـphoto/default.png',null=True, blank=True,verbose_name = "عکس پرسنلی ۳*۴")
   identity_number = models.CharField(max_length=50,unique=True,null=True, blank=True,verbose_name = "شماره شناسنامه")
