@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from .models import Profile, Notice
 from . import models
+from django.db import transaction
 
 
 

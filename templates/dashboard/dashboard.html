@@ -214,7 +214,17 @@
                             </div>
                             <!-- end page title -->
     identity_number:  {{ user.profile.identity_number }}  <br> username:{{ user.username }}  <br> bank_name: {{ user.profile.bank_name }}
+
     <br> <br> <hr>
+
+
+
+
+
+    <br> <br> <hr>
+
+
+
 
 
 
@@ -648,23 +658,10 @@
 
 
                             <br><br>
-                          {% for Notice in notices %}
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                             <h4 class="card-title mb-4">{{ Notice.title }}</h4>
-                                             <div class="table-responsive">
-                                                <p class="text-muted mb-0">{{ Notice.content }}</p>
-                                                <br>
-                                                <p style="text-align:right"> <small> {{ Notice.updated_on }} </small> </p>
-                                              </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          {% endfor %}
-                            <!-- end row -->
+                            <input  class="btn btn-success btn-block" type="submit" value="Create or Update Profile">
+
+
+
 
                         </div> <!-- container-fluid -->
                     </div>
