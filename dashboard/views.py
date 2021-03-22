@@ -42,6 +42,30 @@ def dashboard(request):
   'profile_form': profile_form }
   return render(request, 'dashboard/dashboard.html', context)
 
+#------------------------------------------------------------------
+
+
+def registerPage(request):
+    if request.method == 'POST':
+        form = createUserForm(request.POST)
+        profile_form = profileForm(request.POST)
+
+        if form.is_valid() and profile_form.is_valid():
+            user = form.save()
+
+            #we don't save the profile_form here because we have to first get the value of profile_form, assign the user to the OneToOneField created in models before we now save the profile_form.
+
+            profile = profile_form.save(commit=False)
+            profile.user = user
+
+            profile.save()
+
+            messages.success(request,  'Your account has been successfully created')
+
+            return redirect('login')
+
+    context = {'form': form, 'profile_form': profile_form}
+    return render(request, 'app_name/register.html', context)
 
 
 
