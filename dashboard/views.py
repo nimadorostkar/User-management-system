@@ -15,7 +15,7 @@ def dashboard(request):
   context = {'profile': profile, 'notices':notices }
   return render(request, 'dashboard/dashboard.html', context)
 
-def update_profile(request, user_id):
-    user = User.objects.get(pk=user_id)
+#def update_profile(request, user_id):
+    #user = User.objects.get(pk=user_id)
     #user.profile.bio = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
-    user.save()
+    #user.save()
