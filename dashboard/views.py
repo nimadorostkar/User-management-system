@@ -44,6 +44,24 @@ def dashboard(request):
 
 
 
+    if request.method == 'POST':
+        user_form = EditProfileForm(request.POST, instance=request.user)
+        profile_form = UserProfileForm(request.POST, instance=request.user.UserProfile.user)
+
+        if user_form.is_valid() and profile_form.is_valid():
+            user = user_form.save(commit=False)
+            #user.username = user.email
+            user.save()
+            profile = profile_form.save(commit=False)
+            profile.user = user
+            profile.save()
+            return redirect('/account/profile')
+    else:
+        profile_form = UserProfileForm(instance=request.user.userprofile)
+        user_form = EditProfileForm(instance=request.user)
+
+
+
 
 
 #-------------------------- end views ------------------------
