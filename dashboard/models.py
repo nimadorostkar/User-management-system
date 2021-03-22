@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 
 
+#------------------------------------------------------------------------------
 class Notice(models.Model):
     user = models.ManyToManyField(User)
     title = models.CharField(max_length=200, unique=True)
@@ -20,7 +21,7 @@ class Notice(models.Model):
 
 
 
-
+#------------------------------------------------------------------------------
 class Profile(models.Model):
   user = models.OneToOneField(User, on_delete=models.CASCADE)
   user_photo=models.ImageField(upload_to='user_uploads/user_photo',default='user_uploads/user_photo/default.png',null=True, blank=True,verbose_name = "تصویر")
