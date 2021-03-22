@@ -1,3 +1,7 @@
+from django import forms
+
+
+
 class UserForm(forms.ModelForm):
     class Meta:
         model = User
@@ -6,4 +10,4 @@ class UserForm(forms.ModelForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('address', 'bank_name', 'cardـnumber')
+        fields = ('address', 'bank_name', 'cardـnumber', 'account_holder')

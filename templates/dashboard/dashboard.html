@@ -214,6 +214,17 @@
                             </div>
                             <!-- end page title -->
     identity_number:  {{ user.profile.identity_number }}  <br> username:{{ user.username }}  <br> bank_name: {{ user.profile.bank_name }}
+    <br> <br>
+
+    <form method="post">
+       {% csrf_token %}
+       {{ user_form.as_p }}
+       {{ profile_form.as_p }}
+       <button type="submit">Save changes</button>
+    </form>
+
+
+
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
                                     <div class="card">
