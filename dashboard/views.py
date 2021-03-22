@@ -16,23 +16,25 @@ from .forms import ProfileForm, CreateUserForm
 def dashboard(request):
   profile = models.Profile.objects.filter(user=request.user)
   notices = models.Notice.objects.filter(user=request.user).order_by('-created_on')
-  context = {'profile': profile, 'notices':notices }
+
+  if request.method == 'POST':
+      form = createUserForm(request.POST)
+      profile_form = profileForm(request.POST)
+
+      if form.is_valid() and profile_form.is_valid():
+          user = form.save()
+
+          #we don't save the profile_form here because we have to first get the value of profile_form, assign the user to the OneToOneField created in models before we now save the profile_form.
+
+          profile = profile_form.save(commit=False)
+          profile.user = user
+
+          profile.save()
+
+          messages.success(request,  'Your account has been successfully created')
+
+          return redirect('login')
+
+
+  context = {'profile': profile, 'notices':notices, 'form':form, 'profile_form': profile_form }
   return render(request, 'dashboard/dashboard.html', context)
-
-
-
-
-@login_required
-def updateProfile(request, pk):
-
-	profile = Profile.objects.get(id=pk)
-	form = ProfileForm(instance=profile)
-
-	if request.method == 'POST':
-		form = ProfileForm(request.POST, instance=profile)
-		if form.is_valid():
-			form.save()
-			return redirect('/')
-
-	context = {'form':form}
-	return render(request, 'dashboard/dashboard.html', context)
