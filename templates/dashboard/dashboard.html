@@ -216,35 +216,6 @@
     identity_number:  {{ user.profile.identity_number }}  <br> username:{{ user.username }}  <br> bank_name: {{ user.profile.bank_name }}
     <br> <br> <hr>
 
-    <form method="POST" action="">
-                {% csrf_token %}
-                    <h3>Register Profile</h3>
-
-                    <div class="form-field">
-                        {{profile_form.name.label_tag}}
-                        {{profile_form.name}}
-                    </div>
-                    <div class="form-field">
-                        {{form.username.errors}}
-                        {{form.username.label_tag}}
-                        {{form.username}}
-                    </div>
-                    <div class="form-field">
-                        {{profile_form.email.label_tag}}
-                        {{profile_form.email}}
-                    </div>
-                    <div class="form-field">
-                        {{profile_form.address.label_tag}}
-                        {{profile_form.address}}
-                    </div>
-
-
-                <hr>
-                <input id="form-button" class="btn btn-success btn-block" type="submit" value="Create Profile">
-                <br>
-                    {{form.non_field_errors}}
-
-            </form>
 
 
 
