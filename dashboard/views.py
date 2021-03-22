@@ -10,6 +10,7 @@ from .forms import ProfileForm, UserForm
 from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
 from django import forms
+from django.conf import settings
 
 
 
@@ -28,12 +29,12 @@ def dashboard(request):
             user_form.save()
             profile_form.save()
             messages.success(request, _('Your profile was successfully updated!'))
-            return redirect('settings:profile')
+            return redirect('dashboard.html')
         else:
             messages.error(request, _('Please correct the error below.'))
-    else:
-        user_form = UserForm(instance=request.user)
-        profile_form = ProfileForm(instance=request.user.profile)
+  else:
+      user_form = UserForm(instance=request.user)
+      profile_form = ProfileForm(instance=request.user.profile)
 
   context = {
   'profile': profile,

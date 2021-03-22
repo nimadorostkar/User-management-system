@@ -221,13 +221,12 @@
     <br> <br> <hr>
 
 
-					<form method="POST" action="">
-					  {% csrf_token %}
-            {% comment %} {{ user_form.as_p }} {% endcomment %}
-            {{ profile_form.as_p }}
-            <input class="btn login_btn" type="submit" value=" Update ">
-		    	  {{form.errors}}
-          </form>
+        <form method="post">
+          {% csrf_token %}
+          {{ user_form.as_p }}
+          {{ profile_form.as_p }}
+          <button type="submit">Save changes</button>
+        </form>
 
 
 
