@@ -7,10 +7,10 @@ from .models import Profile
 
 
 
-class ProfileForm(ModelForm):
+class ProfileForm(forms.ModelForm):
 	class Meta:
 		model = Profile
-		fields = ['bank_name', 'account_holder', 'address']
+		fields = ['address']
         #fields = '__all__'
 
 
