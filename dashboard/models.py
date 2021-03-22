@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 
@@ -38,12 +39,19 @@ class Profile(models.Model):
   cardـnumber = models.CharField(max_length=16,null=True, blank=True,verbose_name = " شماره کارت بانک  ")
   account_holder = models.CharField(max_length=150,null=True, blank=True,verbose_name = " نام صاحب حساب ")
 
+
   class Meta:
       verbose_name = "پروفایل"
       verbose_name_plural = " پروفایل ها "
 
   def __str__(self):
     return "پروفایل : " + str(self.user)
+
+
+  def get_absolute_url(self):
+        return reverse('dashboard:',args=[self.id])
+
+
 
  # def get_absolute_url(self):
         #return reverse('App:material_detail',args=[self.id])
