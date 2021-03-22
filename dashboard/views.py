@@ -49,15 +49,15 @@ def dashboard(request):
 
 
 
-{% comment %}
-
+"""
     References:
       https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html
       https://prog.world/one-to-one-relationship-linking-a-user-model-to-a-custom-profile-model-in-django/
       https://dennis-sourcecode.herokuapp.com/30/
       https://stackoverflow.com/questions/53165222/updating-userprofile-onetoone-model-to-django-user-model
+"""
 
-{% endcomment %}
+
 
 
 
