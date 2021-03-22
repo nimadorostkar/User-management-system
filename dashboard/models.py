@@ -13,11 +13,11 @@ class Notice(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name = "اعلان"
-        verbose_name_plural = " اعلانات "
+        ordering = ['-created_on']
 
     class Meta:
-        ordering = ['-created_on']
+        verbose_name = "اعلان"
+        verbose_name_plural = " اعلانات "
 
     def __str__(self):
         return self.title
