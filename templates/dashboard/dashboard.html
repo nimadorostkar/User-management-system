@@ -74,9 +74,7 @@
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {% for Profile in profile %}
-                                <img class="rounded-circle header-profile-user" src="{{ Profile.user_photo.url }}" alt="Header Avatar">
-                                {% endfor %}
+                                <img class="rounded-circle header-profile-user" src="{{ user.profile.user_photo.url }}" alt="Header Avatar">
                                 <span class="d-none d-xl-inline-block ml-1 font-weight-medium font-size-18">{{ user.username }}</span>
                                 <i class="uil-angle-down d-none d-xl-inline-block font-size-18"></i>
                             </button>
@@ -215,7 +213,7 @@
                                 </div>
                             </div>
                             <!-- end page title -->
-      1{{ user.Profile.identity_number }} 2{{ Profile.identity_number }} 3{{ user.username }} 4{{ user.identity_number }}
+    identity_number:  {{ user.profile.identity_number }}  <br> username:{{ user.username }}  <br> bank_name: {{ user.profile.bank_name }}
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
                                     <div class="card">
