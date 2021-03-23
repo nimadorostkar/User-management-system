@@ -52,7 +52,6 @@ def dashboard(request):
 
 
 
-
 @login_required
 @transaction.atomic
 def payment(request):
