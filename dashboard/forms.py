@@ -11,7 +11,9 @@ class PaymentForm(forms.ModelForm):
 		model = Payment
 		fields = [
         'descriptions',
-        'photo']
+		'photo']
+
+
 
 
 

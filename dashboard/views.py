@@ -11,7 +11,6 @@ from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
 from django import forms
 from datetime import datetime
-from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 
 
@@ -67,37 +66,44 @@ def dashboard(request):
 
 
 
-
 @login_required
 @transaction.atomic
 def payment(request):
-    payment = models.Payment.objects.filter(user=request.user).order_by('-created_on')
     if request.method == 'POST':
-          payment_form = PaymentForm(request.POST, request.FILES, instance=request.user.payment)
-          if payment_form.is_valid():
-              payment_form.save()
-              messages.success(request, _('Your profile was successfully updated!'))
-              context = {'payment': payment,'payment_form': payment_form }
-              return render(request, 'dashboard/payment.html', context)
-          else:
-              messages.error(request, _('Please correct the error below.'))
+        payment_form=PaymentForm(request.POST, request.FILES, instance=request.user)
+        if payment_form.is_valid():
+            payment_form.save()
+        return redirect('/')
     else:
-        payment_form = PaymentForm(instance=request.user.payment)
-
-    context = {'payment': payment,'payment_form': payment_form }
-    return render(request, 'dashboard/payment.html', context)
-
+      payment_form = PaymentForm(instance=request.user)
+      context = {'payment_form': payment_form }
+      return render(request, 'dashboard/payment.html', context)
 
 
 
-def post_upload(request):
-    if request.method == 'GET':
-        return render(request, 'dashboard/payment.html', {})
-    elif request.method == 'POST':
-        payment = models.Payment.objects.create(content=request.POST['content'],created_at=datetime.utcnow())
-        # No need to call post.save() at this point -- it's already saved.
-        return render(request, 'dashboard/payment.html', {})
 
+
+'''
+    payment_form = PaymentForm(request.POST, request.FILES, instance=request.user.payment)
+    if request.method == 'POST':
+        payment = Payment()
+        payment.descriptions = request.POST['descriptions']
+        #payment.photo = request.POST['photo']
+        payment.save()
+        return HttpResponseRedirect('dashboard/payment.html')
+    else:
+        context = {'payment_form': payment_form}
+        return render(request, 'dashboard/payment.html', context)
+
+
+def content_get(request):
+    if request.method == 'POST':
+        form=ContentForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/')
+
+'''
 
 
 

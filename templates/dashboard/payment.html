@@ -9,11 +9,11 @@
 
         <h2> uplad... </h2>
 
-           <form method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ payment_form.as_p }}
-                <button type="submit"> upload </button>
-            </form>
+        <form id="taskitem_form" method="post" action="">
+            {% csrf_token %}
+            {{ payment_form.as_p }}
+            <input type="submit" name="submit" value="Add Task" class ="btn btn-primary" />
+        </form>
 
   </body>
 </html>
