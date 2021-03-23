@@ -14,6 +14,7 @@ class PaymentForm(forms.ModelForm):
         'photo']
 
 
+
 class ProfileForm(forms.ModelForm):
 	class Meta:
 		model = Profile
