@@ -65,9 +65,23 @@ def dashboard(request):
 
 
 
+@login_required
+@transaction.atomic
 def payment(request):
     payment = models.Payment.objects.filter(user=request.user).order_by('-created_on')
-    context = {'payment': payment }
+    if request.method == 'POST':
+          payment_form = PaymentForm(request.POST, request.FILES, instance=request.user.payment)
+          if payment_form.is_valid():
+              payment_form.save()
+              messages.success(request, _('Your profile was successfully updated!'))
+              context = {'payment': payment,'payment_form': payment_form }
+              return render(request, 'dashboard/payment.html', context)
+          else:
+              messages.error(request, _('Please correct the error below.'))
+    else:
+        payment_form = PaymentForm(instance=request.user.payment)
+
+    context = {'payment': payment,'payment_form': payment_form }
     return render(request, 'dashboard/payment.html', context)
 
 
