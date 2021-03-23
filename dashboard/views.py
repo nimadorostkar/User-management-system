@@ -74,16 +74,13 @@ def payment(request):
         if payment_form.is_valid():
             payment_form.save()
             messages.success(request, _('Your Payment was successfully updated!'))
-            context = {'payment_form': payment_form }
-            return render(request, 'dashboard/dashboard.html', context)
+            return redirect('/')
         else:
             messages.error(request, _('Please correct the error below.'))
-
     else:
       payment_form=PaymentForm(request.POST, request.FILES, instance=request.user)
       context = {'payment_form': payment_form }
       return render(request, 'dashboard/payment.html', context)
-
 
 
 
