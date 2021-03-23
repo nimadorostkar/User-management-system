@@ -72,8 +72,9 @@ def payment(request):
     if request.method == 'POST':
         payment_form=PaymentForm(request.POST, request.FILES, instance=request.user)
         if payment_form.is_valid():
-            instance = payment_form.save()
-        return redirect('/')
+            payment_form.save()
+        context = {'payment_form': payment_form }
+        return render(request, 'dashboard/dashboard.html', context)
     else:
       payment_form = PaymentForm(instance=request.user)
       context = {'payment_form': payment_form }
