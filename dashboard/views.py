@@ -10,8 +10,7 @@ from .forms import ProfileForm, UserForm, PaymentForm
 from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
 from django import forms
-from datetime import datetime
-from django.http import HttpResponseRedirect
+
 
 
 
@@ -50,18 +49,6 @@ def dashboard(request):
 
 
 
-"""
-    References:
-      https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html
-      https://prog.world/one-to-one-relationship-linking-a-user-model-to-a-custom-profile-model-in-django/
-      https://dennis-sourcecode.herokuapp.com/30/
-      https://stackoverflow.com/questions/53165222/updating-userprofile-onetoone-model-to-django-user-model
-"""
-
-
-
-
-
 
 
 
@@ -89,39 +76,7 @@ def payment(request):
 
 
 
-'''
 
-
-
-a=payment_form.save(commit=False)
-a.descriptions=request.POST.get('descriptions')
-a.photo=request.POST.get('photo')
-a.created_by=request.user
-a.save()
-
-
-
-
-    payment_form = PaymentForm(request.POST, request.FILES, instance=request.user.payment)
-    if request.method == 'POST':
-        payment = Payment()
-        payment.descriptions = request.POST['descriptions']
-        #payment.photo = request.POST['photo']
-        payment.save()
-        return HttpResponseRedirect('dashboard/payment.html')
-    else:
-        context = {'payment_form': payment_form}
-        return render(request, 'dashboard/payment.html', context)
-
-
-def content_get(request):
-    if request.method == 'POST':
-        form=ContentForm(request.POST)
-        if form.is_valid():
-            form.save()
-        return redirect('/')
-
-'''
 
 
 
