@@ -218,9 +218,7 @@
                             <!-- end page title -->
 
 
-     ------username:...    {{ user.username }}               <br>
-     ----first_name:...    {{ user.first_name }}             <br>
-     -----last_name:...    {{ user.last_name }}              <br>
+
      -----password1:...    {{ user.password1 }}              <br>
      ---father_name:...    {{ user.profile.father_name }}    <br>
      -----bank_name:...    {{ user.profile.bank_name }}      <br>
@@ -250,62 +248,65 @@
 
 
                             <div class="row">
-                                <div class="col-md-6 col-sm-12">
+
+                                <div class="col-md-4 col-sm-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            <div class="float-right mt-2">
-                                                <div id="total-investment-chart"></div>
-                                            </div>
                                             <div>
-                                                <h4 class="mb-1 mt-1">Beta (β) : <span id="portfolio-beta"> nima</span></h4>
-                                                <p class="text-muted" id="portfolio-beta-text">Your portfolio moves by a factor of 0 in the direction of market swing</p>
-                                                <p class="mb-0"><a href="#" style="padding-top: 20px;">See Calculations &nbsp;<i class="fas fa-long-arrow-alt-right"></i></a></p>
+                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> username: </small> {{ user.username }} </h5>
                                             </div>
                                         </div>
                                     </div>
                                 </div> <!-- end col-->
-                                <div class="col-md-6 col-sm-12">
+                                <div class="col-md-4 col-sm-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            <div class="float-right mt-2">
-                                                <div id="total-investment-chart"></div>
-                                            </div>
                                             <div>
-                                                <h4 class="mb-1 mt-1">PE Ratio : <span id="portfolio-pe">PE</span></h4>
-                                                <p class="text-muted">This is a holdings-weighted consolidated PE Ratio of all the stocks held in your portfolio</p>
-                                                <p class="mb-0"><a href="#" style="padding-top: 20px;">See Calculations &nbsp;<i class="fas fa-long-arrow-alt-right"></i></a></p>
+                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> نام: </small> {{ user.first_name }} </h5>
                                             </div>
                                         </div>
                                     </div>
                                 </div> <!-- end col-->
-                                <div class="col-md-6 col-sm-12">
+                                <div class="col-md-4 col-sm-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            <div class="float-right mt-2">
-                                                <div id="total-investment-chart"></div>
-                                            </div>
                                             <div>
-                                                <h4 class="mb-1 mt-1">Price Forecast : &nbsp;<span style="color:#34c38f;"><i class="fas fa-caret-up"></i> 1.27%</span></h4>
-                                                <p class="text-muted">According to analyst forecasts, your portfolio is estimated to grow by 1.27% by next year</p>
-                                                <p class="mb-0"><a href="#" style="padding-top: 20px;">See Forecast Report &nbsp;<i class="fas fa-long-arrow-alt-right"></i></a></p>
+                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> نام خانوادگی: </small> {{ user.last_name }} </h5>
                                             </div>
                                         </div>
                                     </div>
                                 </div> <!-- end col-->
-                                <div class="col-md-6 col-sm-12">
+                                <div class="col-md-4 col-sm-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            <div class="float-right mt-2">
-                                                <div id="total-investment-chart"></div>
-                                            </div>
                                             <div>
-                                                <h4 class="mb-1 mt-1">Redflags : <span style="color:#f46a6a;">2 &nbsp;<i class="fas fa-flag"></i></span></h4>
-                                                <p class="text-muted">We spotted possible redflags with 2 of the securities in your portfolio</p>
-                                                <p class="mb-0"><a href="#" style="padding-top: 20px;">See Redflags &nbsp;<i class="fas fa-long-arrow-alt-right"></i></a></p>
+                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> E-mail: </small> {{ user.email }} </h5>
                                             </div>
                                         </div>
                                     </div>
                                 </div> <!-- end col-->
+                                <div class="col-md-4 col-sm-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div>
+                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> رمز عبور: </small> {{ user.password1 }} </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end col-->
+                                <div class="col-md-4 col-sm-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div>
+                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> تکرار رمز عبو: </small> {{ user.password2 }} </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end col-->
+
+
+
+
                             </div>
 
                             <footer class="footer">
