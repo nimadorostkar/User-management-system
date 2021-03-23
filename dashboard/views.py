@@ -6,10 +6,13 @@ from django.conf import settings
 from .models import Profile, Notice, Payment
 from . import models
 from django.db import transaction
-from .forms import ProfileForm, UserForm
+from .forms import ProfileForm, UserForm, PaymentForm
 from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
 from django import forms
+from datetime import datetime
+from django.core.urlresolvers import reverse
+from django.http import HttpResponseRedirect
 
 
 
@@ -84,6 +87,16 @@ def payment(request):
     context = {'payment': payment,'payment_form': payment_form }
     return render(request, 'dashboard/payment.html', context)
 
+
+
+
+def post_upload(request):
+    if request.method == 'GET':
+        return render(request, 'dashboard/payment.html', {})
+    elif request.method == 'POST':
+        payment = models.Payment.objects.create(content=request.POST['content'],created_at=datetime.utcnow())
+        # No need to call post.save() at this point -- it's already saved.
+        return render(request, 'dashboard/payment.html', {})
 
 
 
