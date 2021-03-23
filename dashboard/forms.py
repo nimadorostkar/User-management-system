@@ -15,6 +15,7 @@ class ProfileForm(forms.ModelForm):
         'father_name',
         'identity_number',
         'national_code',
+		'phone',
         'address',
         'bank_name',
         'account_holder',
