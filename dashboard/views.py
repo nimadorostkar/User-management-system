@@ -72,7 +72,11 @@ def payment(request):
     if request.method == 'POST':
         payment_form=PaymentForm(request.POST, request.FILES, instance=request.user)
         if payment_form.is_valid():
-            payment_form.save()
+            obj = Payment() #gets new object
+            obj.descriptions = payment_form.cleaned_data['descriptions']
+            obj.photo = payment_form.cleaned_data['photo']
+            obj.user = payment_form.created_by=request.user
+            obj.save()
             messages.success(request, _('Your Payment was successfully updated!'))
             return redirect('/')
         else:
