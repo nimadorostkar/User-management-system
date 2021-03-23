@@ -218,25 +218,12 @@
                             <!-- end page title -->
 
 
-
-     -----password1:...    {{ user.password1 }}              <br>
-     ---father_name:...    {{ user.profile.father_name }}    <br>
-     -----bank_name:...    {{ user.profile.bank_name }}      <br>
-     account_holder:...    {{ user.profile.account_holder }} <br>
-     -------address:...    {{ user.profile.address }}        <br>
-     -national_code:...    {{ user.profile.national_code }}  <br>
-
-
-    <br> <br> <hr>
-
-
         <form method="post" enctype="multipart/form-data">
           {% csrf_token %}
           {{ user_form.as_p }}
           {{ profile_form.as_p }}
           <button type="submit">Save changes</button>
         </form>
-
 
 
     <br> <br> <hr>
@@ -289,7 +276,7 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> رمز عبور: </small> {{ user.password1 }} </h5>
+                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> نام پدر: </small> {{ user.profile.father_name }} </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -298,7 +285,7 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> تکرار رمز عبو: </small> {{ user.password2 }} </h5>
+                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> شماره شناسنامه: </small> {{ user.profile.identity_number }} </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -307,7 +294,7 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> نام پدر: </small> {{ user.username }} </h5>
+                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> کد ملی : </small> {{ user.profile.national_code }} </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -316,7 +303,7 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> شماره شناسنامه: </small> {{ user.first_name }} </h5>
+                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> شماره تماس : </small> {{ user.profile.phone }} </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -325,7 +312,7 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> کد ملی : </small> {{ user.last_name }} </h5>
+                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> آدرس : </small> {{ user.profile.address }} </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -334,7 +321,7 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> شماره تماس : </small> {{ user.email }} </h5>
+                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> نام بانک  : </small> {{ user.profile.bank_name }} </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -343,7 +330,7 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> آدرس : </small> {{ user.password1 }} </h5>
+                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> نام صاحب حساب : </small> {{ user.profile.account_holder }} </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -352,25 +339,7 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> نام بانک  : </small> {{ user.password2 }} </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end col-->
-                                <div class="col-md-4 col-sm-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> نام صاحب حساب : </small> {{ user.password1 }} </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end col-->
-                                <div class="col-md-4 col-sm-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> شماره کارت : </small> {{ user.password1 }} </h5>
+                                                <h5 style="text-align:center" class="mb-1 mt-1"> <small> شماره کارت : </small> {{ user.profile.cardـnumber }} </h5>
                                             </div>
                                         </div>
                                     </div>
