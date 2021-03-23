@@ -1,0 +1,12 @@
+iso8601
+pytz
+pyyaml
+requests
+
+[develop]
+flake8
+pylint
+
+[test]
+pytest-cov
+pytest
