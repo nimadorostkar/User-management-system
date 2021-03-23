@@ -72,7 +72,7 @@ def payment(request):
     if request.method == 'POST':
         payment_form=PaymentForm(request.POST, request.FILES, instance=request.user)
         if payment_form.is_valid():
-            payment_form.save(commit=True)
+            payment_form.save()
             messages.success(request, _('Your Payment was successfully updated!'))
             return redirect('/')
         else:
@@ -86,6 +86,18 @@ def payment(request):
 
 
 '''
+
+
+
+a=payment_form.save(commit=False)
+a.descriptions=request.POST.get('descriptions')
+a.photo=request.POST.get('photo')
+a.created_by=request.user
+a.save()
+
+
+
+
     payment_form = PaymentForm(request.POST, request.FILES, instance=request.user.payment)
     if request.method == 'POST':
         payment = Payment()
