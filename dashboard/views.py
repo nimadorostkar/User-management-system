@@ -72,7 +72,7 @@ def payment(request):
     if request.method == 'POST':
         payment_form=PaymentForm(request.POST, request.FILES, instance=request.user)
         if payment_form.is_valid():
-            payment_form.save()
+            instance = payment_form.save()
         return redirect('/')
     else:
       payment_form = PaymentForm(instance=request.user)
