@@ -48,9 +48,6 @@ def dashboard(request):
 
 
 
-
-
-
 """
     References:
       https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html
@@ -58,6 +55,37 @@ def dashboard(request):
       https://dennis-sourcecode.herokuapp.com/30/
       https://stackoverflow.com/questions/53165222/updating-userprofile-onetoone-model-to-django-user-model
 """
+
+
+
+
+
+
+
+
+
+
+
+@login_required
+@transaction.atomic
+def payment(request):
+
+  if request.method == 'POST':
+        profile_form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
+        if  profile_form.is_valid():
+            profile_form.save()
+            messages.success(request, _('Your profile was successfully updated!'))
+            context = {'profile_form': profile_form }
+            return render(request, 'dashboard/dashboard.html', context)
+        else:
+            messages.error(request, _('Please correct the error below.'))
+  else:
+      profile_form = ProfileForm(instance=request.user.profile)
+
+  context = {'profile_form': profile_form }
+  return render(request, 'dashboard/dashboard.html', context)
+
+
 
 
 
