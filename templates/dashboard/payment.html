@@ -9,10 +9,12 @@
 
         <h2> uplad... </h2>
 
-        <form id="taskitem_form" method="post" action="">
+         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ payment_form.as_p }}
-            <input type="submit" name="submit" value="Add Task" class ="btn btn-primary" />
+            <div class="row mt-4 justify-content-center">
+                <button type="submit" class="btn btn-primary w-md"> ذخیره </button>
+            </div>
         </form>
 
   </body>
