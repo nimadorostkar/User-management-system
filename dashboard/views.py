@@ -72,7 +72,7 @@ def payment(request):
     if request.method == 'POST':
         payment_form=PaymentForm(request.POST, request.FILES, instance=request.user)
         if payment_form.is_valid():
-            payment_form.save()
+            payment_form.save(commit=True)
             messages.success(request, _('Your Payment was successfully updated!'))
             return redirect('/')
         else:
