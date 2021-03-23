@@ -31,9 +31,9 @@ class Notice(models.Model):
 
 #------------------------------------------------------------------------------
 class Payment(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE,unique=True,related_name='profile',verbose_name = "کاربر")
+    user = models.OneToOneField(User, on_delete=models.CASCADE,verbose_name = "کاربر")
     descriptions = models.CharField(max_length=300,null=True, blank=True,verbose_name = "توضیحات")
-    user_photo=models.ImageField(upload_to='user_uploads/user_photo',default='user_uploads/user_photo/default.png',null=True, blank=True,verbose_name = " تصویر فیش بانکی")
+    photo=models.ImageField(upload_to='user_uploads/payments',default='user_uploads/payments/default.png',null=True, blank=True,verbose_name = " تصویر فیش بانکی")
     updated_on = models.DateTimeField(auto_now= True)
     created_on = models.DateTimeField(auto_now_add=True)
 
