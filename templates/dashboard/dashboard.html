@@ -217,7 +217,6 @@
                             </div>
                             <!-- end page title -->
 
-
                             <div class="row">
 
                                 <div class="col-md-3 col-sm-12">
@@ -393,33 +392,17 @@
                                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form id="add-holding-form" method="post" action="">
-                                                                {% csrf_token %}
-                                                                <div class="form-group row mb-4">
-                                                                    <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Stock Ticker :</label>
-                                                                    <div class="col-sm-9">
-                                                                        <select name="company" class="form-control select2 select2-hidden-accessible" id="company" data-select2-id="1" tabindex="-1" aria-hidden="true"></select>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row mb-4">
-                                                                    <label for="example-date-input" class="col-sm-3 col-form-label">Date</label>
-                                                                    <div class="col-sm-9">
-                                                                        <input name="date" class="form-control" type="date" value="" id="example-date-input" max="">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row mb-4">
-                                                                    <label for="example-date-input" class="col-sm-3 col-form-label">Number of Stocks</label>
-                                                                    <div class="col-sm-9">
-                                                                        <input name="number-stocks" class="form-control" type="number" value="0" min="0" step="1" id="number-stocks">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mt-4 justify-content-center">
-                                                                    <button type="submit" class="btn btn-primary w-md">Submit</button>
-                                                                </div>
-                                                            </form>
+                                                             <form method="post" enctype="multipart/form-data">
+                                                                  {% csrf_token %}
+                                                                  {{ user_form.as_p }}
+                                                                  {{ profile_form.as_p }}
+                                                                  <div class="row mt-4 justify-content-center">
+                                                                      <button type="submit" class="btn btn-primary w-md"> ذخیره </button>
+                                                                  </div>
+                                                              </form>
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal"> بستن </button>
                                                         </div>
                                                     </div>
                                                 </div>
