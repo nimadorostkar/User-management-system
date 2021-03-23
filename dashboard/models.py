@@ -45,7 +45,7 @@ class Payment(models.Model):
         verbose_name_plural = " پرداخت ها "
 
     def __str__(self):
-        return self.title
+        return str(self.created_on)
 
 
 
