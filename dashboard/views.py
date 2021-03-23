@@ -73,10 +73,14 @@ def payment(request):
         payment_form=PaymentForm(request.POST, request.FILES, instance=request.user)
         if payment_form.is_valid():
             payment_form.save()
-        context = {'payment_form': payment_form }
-        return render(request, 'dashboard/dashboard.html', context)
+            messages.success(request, _('Your Payment was successfully updated!'))
+            context = {'payment_form': payment_form }
+            return render(request, 'dashboard/dashboard.html', context)
+        else:
+            messages.error(request, _('Please correct the error below.'))
+
     else:
-      payment_form = PaymentForm(instance=request.user)
+      payment_form=PaymentForm(request.POST, request.FILES, instance=request.user)
       context = {'payment_form': payment_form }
       return render(request, 'dashboard/payment.html', context)
 
