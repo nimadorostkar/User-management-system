@@ -15,7 +15,7 @@ from django import forms
 
 
 
-
+#------------------------------------------------------------------------------
 @login_required
 @transaction.atomic
 def dashboard(request):
@@ -50,8 +50,7 @@ def dashboard(request):
 
 
 
-
-
+#------------------------------------------------------------------------------
 @login_required
 @transaction.atomic
 def payment(request):
@@ -79,4 +78,5 @@ def payment(request):
 
 
 
-#-------------------------- end views ------------------------
+
+#--------------------------------- Views End ----------------------------------
