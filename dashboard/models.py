@@ -8,11 +8,33 @@ from django.dispatch import receiver
 
 
 #------------------------------------------------------------------------------
+class Submitted_files(models.Model):
+    user = models.ManyToManyField(User)
+    title = models.CharField(max_length=200,null=True, blank=True,verbose_name = " عنوان ")
+    file = models.FileField(upload_to='user_uploads/files',null=True, blank=True,verbose_name = "فایل های ارسال شده")
+    updated_on = models.DateTimeField(auto_now= True)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_on']
+
+    class Meta:
+        verbose_name = "فایل ارسال شده"
+        verbose_name_plural = "فایل های ارسال شده"
+
+    def __str__(self):
+        return self.title
+
+
+
+
+
+#------------------------------------------------------------------------------
 class Notice(models.Model):
     user = models.ManyToManyField(User)
-    title = models.CharField(max_length=200, unique=True)
+    title = models.CharField(max_length=200,null=True, blank=True,verbose_name = " عنوان ")
+    content = models.TextField(null=True, blank=True,verbose_name = " متن ")
     updated_on = models.DateTimeField(auto_now= True)
-    content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
