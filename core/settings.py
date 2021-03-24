@@ -36,10 +36,10 @@ INSTALLED_APPS = [
     # Third Party - 1) All Auth
     'allauth',
     'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.twitter',
+    'allauth.socialaccount'
+    #'allauth.socialaccount.providers.facebook',
+    #'allauth.socialaccount.providers.google',
+    #'allauth.socialaccount.providers.twitter',
 ]
 
 MIDDLEWARE = [
@@ -138,6 +138,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
+
+
+'''
 # Required for all-auth
 SITE_ID = 1
 
@@ -166,7 +169,7 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
-
+'''
 
 
 
@@ -177,6 +180,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Custom Settings - allauth
 LOGIN_REDIRECT_URL = "/"
 
+
+
+'''
 # Alphavantage key
 ALPHAVANTAGE_KEY1 = str(os.getenv('ALPHAVANTAGE_KEY1'))
 ALPHAVANTAGE_KEY2 = str(os.getenv('ALPHAVANTAGE_KEY2'))
@@ -185,3 +191,4 @@ ALPHAVANTAGE_KEY4 = str(os.getenv('ALPHAVANTAGE_KEY4'))
 ALPHAVANTAGE_KEY5 = str(os.getenv('ALPHAVANTAGE_KEY5'))
 ALPHAVANTAGE_KEY6 = str(os.getenv('ALPHAVANTAGE_KEY6'))
 ALPHAVANTAGE_KEY7 = str(os.getenv('ALPHAVANTAGE_KEY7'))
+'''
