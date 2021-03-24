@@ -1,6 +1,8 @@
 from .models import Profile, Notice, Payment, Submitted_files
-from django.contrib import admin
 from django.contrib.admin.models import LogEntry
+from django.contrib import admin
+from . import models
+
 
 
 admin.site.site_header= " Crop "
