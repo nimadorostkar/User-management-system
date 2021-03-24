@@ -10,9 +10,9 @@ admin.site.site_title= " Crop "
 
 
 class NoticeAdmin(admin.ModelAdmin):
-	list_display = ('user_name', 'title', 'created_on')
+	list_display = ('title', 'created_on')
 class Submitted_filesAdmin(admin.ModelAdmin):
-	list_display = ('user_name', 'title', 'created_on')
+	list_display = ('title', 'created_on')
 class PaymentAdmin(admin.ModelAdmin):
 	list_display = ('user_name', 'image_tag','descriptions','created_on')
 class ProfileAdmin(admin.ModelAdmin):

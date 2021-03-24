@@ -17,9 +17,6 @@ class Submitted_files(models.Model):
     updated_on = models.DateTimeField(auto_now= True)
     created_on = models.DateTimeField(auto_now_add=True)
 
-    def user_name(self):
-          return str(self.user)
-
     class Meta:
         ordering = ['-created_on']
 
@@ -39,10 +36,6 @@ class Notice(models.Model):
     content = models.TextField(null=True, blank=True,verbose_name = " متن ")
     updated_on = models.DateTimeField(auto_now= True)
     created_on = models.DateTimeField(auto_now_add=True)
-
-
-    def user_name(self):
-          return str(self.user)
 
 
     class Meta:
