@@ -8,7 +8,7 @@
   <meta name="author" content="Arasari Studio">
   <title>Sign Up | Portfolio Management System</title>
   <link href="{% static 'account/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'account/css/common.css' %}" rel="stylesheet">    
+  <link href="{% static 'account/css/common.css' %}" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&amp;display=swap" rel="stylesheet">
   <link href="{% static 'account/css/theme-03.css' %}" rel="stylesheet">
 </head>
@@ -17,12 +17,12 @@
     <div class="forny-inner">
       <div class="forny-form">
         <div class="mb-8 text-center forny-logo">
-          <!-- <img src="{% static 'account/img/logo-03.svg' %}"> -->
-          <h3>Logo Placeholder</h3>
+          <img width=40% src="{% static 'account/img/logo.png' %}">
+          <!-- <h3>Logo Placeholder</h3>  -->
         </div>
         <div class="text-center">
-          <h4>Create an account</h4>
-          <p>Setup a new account in a minute.</p>
+          <h4> ایجاد یک حساب کاربری </h4>
+          <p> راه اندازی یک حساب کاربری جدید در یک دقیقه</p>
         </div>
         {% if form.errors %}
           {% for field in form %}
@@ -141,7 +141,7 @@
         </div>
         <div class="text-center">
           <div class="d-inline-block mr-1">
-            <a title="Facebook" href="{% url 'facebook_login' %}?process=login">            
+            <a title="Facebook" href="{% url 'facebook_login' %}?process=login">
               <button class="btn btn-icon btn-flat text-facebook">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
                   <defs>
@@ -158,7 +158,7 @@
             </a>
           </div>
           <div class="d-inline-block mr-1">
-            <a title="Google" href="{% url 'google_login' %}?process=login">                 
+            <a title="Google" href="{% url 'google_login' %}?process=login">
               <button class="btn btn-icon btn-flat text-google">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
                   <defs>
@@ -177,7 +177,7 @@
             </a>
           </div>
           <div class="d-inline-block">
-            <a title="Twitter" href="{% url 'twitter_login' %}?process=login">             
+            <a title="Twitter" href="{% url 'twitter_login' %}?process=login">
               <button class="btn btn-icon btn-flat text-twitter">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
                   <defs>
@@ -195,7 +195,7 @@
           </div>
         </div>
         <div class="text-center mt-10">
-          Already have an account? <a href="{% url 'account_login' %}">Login here</a>
+           حساب کاربری دارید؟ <a href="{% url 'account_login' %}"> از اینجا وارد شوید </a>
         </div>
       </div>
     </div>
