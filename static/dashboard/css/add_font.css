@@ -21,5 +21,9 @@
 }
 
 * {
-  font-family: "iransans", sans-serif;
+  font-family: "iransans", sans-serif !important;
+}
+
+.p {
+  font-family: "iransans", sans-serif !important;
 }
