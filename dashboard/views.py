@@ -1,15 +1,15 @@
-import random
+from .models import Profile, Notice, Payment, Submitted_files
+from django.contrib.auth.decorators import login_required
+from django.utils.translation import ugettext_lazy as _
+from .forms import ProfileForm, UserForm, PaymentForm
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render,redirect
-from django.contrib.auth.decorators import login_required
-from django.conf import settings
-from .models import Profile, Notice, Payment, Submitted_files
-from . import models
-from django.db import transaction
-from .forms import ProfileForm, UserForm, PaymentForm
 from django.contrib import messages
-from django.utils.translation import ugettext_lazy as _
+from django.db import transaction
+from django.conf import settings
 from django import forms
+from . import models
+import random
 
 
 
@@ -47,6 +47,7 @@ def dashboard(request):
   'submitted_files':submitted_files,
   'profile_form': profile_form }
   return render(request, 'dashboard/dashboard.html', context)
+
 
 
 
