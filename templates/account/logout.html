@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Authentication forms">
   <meta name="author" content="Arasari Studio">
-  <title>Logout | Portfolio Management System</title>
+  <title>Logout | crop </title>
   <link href="{% static 'account/css/bootstrap.min.css' %}" rel="stylesheet">
   <link href="{% static 'account/css/common.css' %}" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&amp;display=swap" rel="stylesheet">
@@ -21,8 +21,8 @@
           <!-- <h3>Logo Placeholder</h3> -->
         </div>
         <div class="text-center">
-          <h4>Logout from account</h4>
-          <p class="mb-10">Are you sure, you want to sign out?</p>
+          <h4> خروج از حساب کاربری </h4>
+          <p class="mb-10"> مطمئن هستید ، می خواهید از سیستم خارج شوید؟ </p>
         </div>
         <form method="POST" action="{% url 'account_logout' %}">
           {% csrf_token %}
