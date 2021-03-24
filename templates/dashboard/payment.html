@@ -12,15 +12,23 @@
   </head>
   <body>
 
-        <h2> Uplad... </h2> <hr>
 
-         <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ payment_form.as_p }}
-            <div class="row mt-4 justify-content-center">
-                <button type="submit" class="btn btn-primary w-md"> ذخیره </button>
+      <div class="container">
+        <h2>Horizontal form</h2> <br><hr>
+        <form class="form-horizontal" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <div class="col-sm-10">
+              {% csrf_token %}
+              {{ payment_form.as_p }}
+              <br>
+              <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-primary w-md"> ذخیره </button>
+              </div>
             </div>
+          </div>
         </form>
+      </div>
+
 
   </body>
 </html>
