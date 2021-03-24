@@ -6,17 +6,15 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 
+
+
 class PaymentForm(forms.ModelForm):
 	class Meta:
 		model = Payment
-		fields = [
-        'descriptions',
-		'photo']
+		fields = ['descriptions', 'photo']
 
 
-
-
-
+		
 class ProfileForm(forms.ModelForm):
 	class Meta:
 		model = Profile
@@ -39,3 +37,11 @@ class UserForm(UserCreationForm):
 	class Meta:
 		model = User
 		fields = ['username','first_name','last_name','email','password1','password2']
+
+
+
+
+
+
+
+#------------------------------- Forms End -----------------------------------
