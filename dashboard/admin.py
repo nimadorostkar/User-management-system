@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Profile, Notice, Payment
+from .models import Profile, Notice, Payment, Submitted_files
 
 
 admin.site.register(Notice)
