@@ -146,8 +146,8 @@ SITE_ID = 1
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
         'APP': {
-            'client_id': str(os.getenv('820701086723-kllb69839qda9fjfhhrotnj0cmnnonvd.apps.googleusercontent.com')),
-            'secret': str(os.getenv('79NBphGuwvUq7JsVYkt8qdtu')),
+            'client_id': str(os.getenv('FACEBOOK_CLIENT_ID')),
+            'secret': str(os.getenv('FACEBOOK_SECRET_KEY')),
             'key': ''
         }
     },
