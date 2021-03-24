@@ -17,11 +17,23 @@
     font-family: "iransans" !important;
 }
 
-* {
+li {
   font-family: "iransans", sans-serif !important;
 }
 
-.p {
+p {
+  font-family: "iransans", sans-serif !important;
+}
+
+pre {
+  font-family: "iransans", sans-serif !important;
+}
+
+a {
+  font-family: "iransans", sans-serif !important;
+}
+
+button {
   font-family: "iransans", sans-serif !important;
 }
 
