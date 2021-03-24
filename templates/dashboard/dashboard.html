@@ -220,158 +220,60 @@
 
                             <div class="row">
 
-                              <div class="col-md-6 col-sm-12">
+                              <div class="col-md-4 col-sm-12">
                                   <div class="card">
                                       <div class="card-body">
                                           <div>
                                             <dl>
-                                              <dt style="color:#5c73e7;">  نام کاربری  </dt>
-                                              <dd>  &nbsp;&nbsp;&nbsp;&nbsp; {{ user.username }} </dd>
-                                              <dt>Milk</dt>
-                                              <dd>- white cold drink</dd>
+                                              <dt style="color:#5c73e7;"> <small> نام کاربری </small> </dt>
+                                              <dd style="text-align:center"> {{ user.username }} </dd>
+                                              <dt style="color:#5c73e7;"><small> نام </small> </dt>
+                                              <dd style="text-align:center"> {{ user.first_name }} </dd>
+                                              <dt style="color:#5c73e7;"> <small> نام خانوادگی</small> </dt>
+                                              <dd style="text-align:center"> {{ user.last_name }} </dd>
+                                              <dt style="color:#5c73e7;"> <small> نام پدر </small> </dt>
+                                              <dd style="text-align:center"> {{ user.profile.father_name }} </dd>
                                             </dl>
-
-
-
-
-                                              <p style="color:#5c73e7;"> نام کاربری  </p> <p>hhh</p>
-                                              <h5 style="text-align:center" class="mb-1 mt-1"> {{ user.username }} </h5>
                                           </div>
                                       </div>
                                   </div>
                               </div> <!-- end col-->
-                              <div class="col-md-6 col-sm-12">
+                              <div class="col-md-4 col-sm-12">
                                   <div class="card">
                                       <div class="card-body">
                                           <div>
-                                              <p style="color:#5c73e7;"> نام کاربری </p>
-                                              <h5 style="text-align:center" class="mb-1 mt-1"> {{ user.username }} </h5>
+                                            <dl>
+                                              <dt style="color:#5c73e7;"> <small> E-mail </small> </dt>
+                                              <dd style="text-align:center"> {{ user.email }} </dd>
+                                              <dt style="color:#5c73e7;"><small> شماره شناسنامه </small> </dt>
+                                              <dd style="text-align:center"> {{ user.profile.identity_number }} </dd>
+                                              <dt style="color:#5c73e7;"> <small> کد ملی </small> </dt>
+                                              <dd style="text-align:center"> {{ user.profile.national_code }} </dd>
+                                              <dt style="color:#5c73e7;"> <small>  شماره تماس  </small> </dt>
+                                              <dd style="text-align:center"> {{ user.profile.phone }} </dd>
+                                            </dl>
                                           </div>
                                       </div>
                                   </div>
                               </div> <!-- end col-->
-
-
-                                <div class="col-md-3 col-sm-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div>
-                                                <p style="color:#5c73e7;"> نام کاربری </p>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> {{ user.username }} </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end col-->
-                                <div class="col-md-3 col-sm-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div>
-                                                <p style="color:#5c73e7;"> نام  </p>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> {{ user.first_name }} </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end col-->
-                                <div class="col-md-3 col-sm-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div>
-                                                <p style="color:#5c73e7;"> نام خانوادگی </p>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> {{ user.last_name }} </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end col-->
-                                <div class="col-md-3 col-sm-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div>
-                                                <p style="color:#5c73e7;"> E-mail </p>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> {{ user.email }} </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end col-->
-                                <div class="col-md-3 col-sm-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div>
-                                                <p style="color:#5c73e7;"> نام پدر </p>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> {{ user.profile.father_name }} </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end col-->
-                                <div class="col-md-3 col-sm-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div>
-                                                <p style="color:#5c73e7;"> شماره شناسنامه </p>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> {{ user.profile.identity_number }} </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end col-->
-                                <div class="col-md-3 col-sm-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div>
-                                                <p style="color:#5c73e7;">کد ملی </p>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> {{ user.profile.national_code }} </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end col-->
-                                <div class="col-md-3 col-sm-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div>
-                                                <p style="color:#5c73e7;"> شماره تماس </p>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> {{ user.profile.phone }} </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end col-->
-                                <div class="col-md-3 col-sm-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div>
-                                                <p style="color:#5c73e7;"> آدرس </p>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> {{ user.profile.address }} </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end col-->
-                                <div class="col-md-3 col-sm-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div>
-                                                <p style="color:#5c73e7;">  نام بانک  </p>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> {{ user.profile.bank_name }} </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end col-->
-                                <div class="col-md-3 col-sm-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div>
-                                                <p style="color:#5c73e7;">  نام صاحب حساب </p>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> {{ user.profile.account_holder }} </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end col-->
-                                <div class="col-md-3 col-sm-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div>
-                                                <p style="color:#5c73e7;">  شماره کارت </p>
-                                                <h5 style="text-align:center" class="mb-1 mt-1"> {{ user.profile.cardـnumber }} </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end col-->
+                              <div class="col-md-4 col-sm-12">
+                                  <div class="card">
+                                      <div class="card-body">
+                                          <div>
+                                            <dl>
+                                              <dt style="color:#5c73e7;"> <small> آدرس </small> </dt>
+                                              <dd style="text-align:center"> {{ user.profile.address }} </dd>
+                                              <dt style="color:#5c73e7;"><small>  نام بانک  </small> </dt>
+                                              <dd style="text-align:center"> {{ user.profile.bank_name }} </dd>
+                                              <dt style="color:#5c73e7;"> <small> نام صاحب حساب </small> </dt>
+                                              <dd style="text-align:center"> {{ user.profile.account_holder }} </dd>
+                                              <dt style="color:#5c73e7;"> <small> شماره کارت </small> </dt>
+                                              <dd style="text-align:center"> {{ user.profile.cardـnumber }} </dd>
+                                            </dl>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div> <!-- end col-->
 
                             </div>
 
