@@ -170,19 +170,9 @@ SOCIALACCOUNT_PROVIDERS = {
 
 
 
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-SERVER_EMAIL = 'nimadorostkar97@gmail.com'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'nimadorostkar97@gmail.com'
-EMAIL_HOST_PASSWORD = '2620376513nima!!'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_SUBJECT_PREFIX = 'fuyun'
-DEFAULT_FROM_EMAIL = 'nimadorostkar97@gmail.com'
 
 # Email Backend - Currently set at console/terminal
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Custom Settings - allauth
 LOGIN_REDIRECT_URL = "/"
