@@ -9,20 +9,19 @@ admin.site.site_title= " Crop "
 
 
 class NoticeAdmin(admin.ModelAdmin):
-	list_display = ('name',)
+	list_display = ('user','title', 'created_on')
 class Submitted_filesAdmin(admin.ModelAdmin):
-	list_display = ('name','description')
+	list_display = ('user','title', 'created_on')
 class PaymentAdmin(admin.ModelAdmin):
-	list_display = ('name','image_tag','description')
+	list_display = ('user','descriptions','created_on')
 class ProfileAdmin(admin.ModelAdmin):
-	list_display = ('rate','product')
+	list_display = ('user','national_code','phone','address')
+
 
 
 admin.site.register(models.Notice,NoticeAdmin)
 admin.site.register(models.Submitted_files,Submitted_filesAdmin)
 admin.site.register(models.Payment,PaymentAdmin)
 admin.site.register(models.Profile,ProfileAdmin)
-
-
 
 admin.site.register(LogEntry)
