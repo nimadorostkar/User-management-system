@@ -8,34 +8,32 @@
   font-weight: normal;
   font-style: normal;
 }
-.iransans {
-  font-family: "iransans" !important;
-}
 
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-    font-family: "iransans" !important;
-}
+.iransans { font-family: "iransans" !important; }
 
-li {
-  font-family: "iransans", sans-serif !important;
-}
 
-p {
-  font-family: "iransans", sans-serif !important;
-}
 
-pre {
-  font-family: "iransans", sans-serif !important;
-}
 
-a {
-  font-family: "iransans", sans-serif !important;
-}
 
-button {
-  font-family: "iransans", sans-serif !important;
-}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {font-family: "iransans" !important;}
+
+.li, li {font-family: "iransans", sans-serif !important;}
+
+.p, p {font-family: "iransans", sans-serif !important;}
+
+.pre, pre {font-family: "iransans", sans-serif !important;}
+
+.a, a {font-family: "iransans", sans-serif !important;}
+
+.button, button {font-family: "iransans", sans-serif !important;}
+
+
+
+
+
+
+
 
 
 /* -------------- font end -----------  */
