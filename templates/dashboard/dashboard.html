@@ -21,6 +21,7 @@
 
         <script src="https://www.chartjs.org/dist/2.9.4/Chart.min.js"></script>
 
+  
 
         <style>
             .tabcontent {
@@ -328,7 +329,7 @@
                                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                         </div>
                                                         <div style="text-align:right; direction:rtl " class="modal-body">
-                                                             <form class="well form-horizontal" method="post" enctype="multipart/form-data">
+                                                             <form method="post" enctype="multipart/form-data">
                                                                   {% csrf_token %}
                                                                   {{ user_form.as_p }}
                                                                   {{ profile_form.as_p }}
