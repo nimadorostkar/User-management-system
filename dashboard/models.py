@@ -7,6 +7,7 @@ from django.dispatch import receiver
 
 
 
+
 #------------------------------------------------------------------------------
 class Submitted_files(models.Model):
     user = models.ManyToManyField(User)
@@ -24,8 +25,6 @@ class Submitted_files(models.Model):
 
     def __str__(self):
         return self.title
-
-
 
 
 
@@ -49,8 +48,6 @@ class Notice(models.Model):
 
 
 
-
-
 #------------------------------------------------------------------------------
 class Payment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE,verbose_name = "کاربر")
@@ -58,7 +55,6 @@ class Payment(models.Model):
     photo=models.ImageField(upload_to='user_uploads/payments',default='user_uploads/payments/default.png',null=True, blank=True,verbose_name = " تصویر فیش بانکی")
     updated_on = models.DateTimeField(auto_now= True)
     created_on = models.DateTimeField(auto_now_add=True)
-
 
     class Meta:
         ordering = ['-created_on']
@@ -69,7 +65,6 @@ class Payment(models.Model):
 
     def __str__(self):
         return str(self.created_on)
-
 
 
 
@@ -98,13 +93,13 @@ class Profile(models.Model):
   def save_user_profile(sender, instance, **kwargs):
       instance.profile.save()
 
-
   class Meta:
       verbose_name = "پروفایل"
       verbose_name_plural = " پروفایل ها "
 
   def __str__(self):
     return "پروفایل : " + str(self.user)
+
 
 
 
