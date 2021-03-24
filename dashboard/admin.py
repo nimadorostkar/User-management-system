@@ -16,7 +16,7 @@ class Submitted_filesAdmin(admin.ModelAdmin):
 class PaymentAdmin(admin.ModelAdmin):
 	list_display = ('descriptions','created_on')
 class ProfileAdmin(admin.ModelAdmin):
-	list_display = ('image_tag','national_code','phone','address')
+	list_display = ('user_name', 'image_tag','national_code','phone','address')
 
 
 

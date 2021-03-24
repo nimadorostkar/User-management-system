@@ -98,6 +98,9 @@ class Profile(models.Model):
   def image_tag(self):
         return format_html("<img width=50 src='{}'>".format(self.user_photo.url))
 
+  def user_name(self):
+        return str(self.user)
+
 
   class Meta:
       verbose_name = "پروفایل"
@@ -106,6 +109,7 @@ class Profile(models.Model):
 
   def __str__(self):
     return "پروفایل : " + str(self.user)
+
 
 
 
