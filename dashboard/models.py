@@ -17,6 +17,9 @@ class Submitted_files(models.Model):
     updated_on = models.DateTimeField(auto_now= True)
     created_on = models.DateTimeField(auto_now_add=True)
 
+    def user_name(self):
+          return str(self.user)
+
     class Meta:
         ordering = ['-created_on']
 
@@ -37,6 +40,11 @@ class Notice(models.Model):
     updated_on = models.DateTimeField(auto_now= True)
     created_on = models.DateTimeField(auto_now_add=True)
 
+
+    def user_name(self):
+          return str(self.user)
+
+
     class Meta:
         ordering = ['-created_on']
 
@@ -56,6 +64,13 @@ class Payment(models.Model):
     photo=models.ImageField(upload_to='user_uploads/payments',default='user_uploads/payments/default.png',null=True, blank=True,verbose_name = " تصویر فیش بانکی")
     updated_on = models.DateTimeField(auto_now= True)
     created_on = models.DateTimeField(auto_now_add=True)
+
+
+    def image_tag(self):
+          return format_html("<img width=50 src='{}'>".format(self.photo.url))
+
+    def user_name(self):
+          return str(self.user)
 
     class Meta:
         ordering = ['-created_on']
