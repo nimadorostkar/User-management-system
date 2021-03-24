@@ -223,13 +223,13 @@
                                       <div class="card-body">
                                           <div>
                                             <dl>
-                                              <dt style="color:#5c73e7;"> <small> نام کاربری </small> </dt>
+                                              <dt style="color:#f56f11;"> <small> نام کاربری </small> </dt>
                                               <dd style="text-align:center"> {{ user.username }} </dd>
-                                              <dt style="color:#5c73e7;"><small> نام </small> </dt>
+                                              <dt style="color:#f56f11;"><small> نام </small> </dt>
                                               <dd style="text-align:center"> {{ user.first_name }} </dd>
-                                              <dt style="color:#5c73e7;"> <small> نام خانوادگی</small> </dt>
+                                              <dt style="color:#f56f11;"> <small> نام خانوادگی</small> </dt>
                                               <dd style="text-align:center"> {{ user.last_name }} </dd>
-                                              <dt style="color:#5c73e7;"> <small> نام پدر </small> </dt>
+                                              <dt style="color:#f56f11;"> <small> نام پدر </small> </dt>
                                               <dd style="text-align:center"> {{ user.profile.father_name }} </dd>
                                             </dl>
                                           </div>
@@ -241,13 +241,13 @@
                                       <div class="card-body">
                                           <div>
                                             <dl>
-                                              <dt style="color:#5c73e7;"> <small> E-mail </small> </dt>
+                                              <dt style="color:#f56f11;"> <small> E-mail </small> </dt>
                                               <dd style="text-align:center"> {{ user.email }} </dd>
-                                              <dt style="color:#5c73e7;"><small> شماره شناسنامه </small> </dt>
+                                              <dt style="color:#f56f11;"><small> شماره شناسنامه </small> </dt>
                                               <dd style="text-align:center"> {{ user.profile.identity_number }} </dd>
-                                              <dt style="color:#5c73e7;"> <small> کد ملی </small> </dt>
+                                              <dt style="color:#f56f11;"> <small> کد ملی </small> </dt>
                                               <dd style="text-align:center"> {{ user.profile.national_code }} </dd>
-                                              <dt style="color:#5c73e7;"> <small>  شماره تماس  </small> </dt>
+                                              <dt style="color:#f56f11;"> <small>  شماره تماس  </small> </dt>
                                               <dd style="text-align:center"> {{ user.profile.phone }} </dd>
                                             </dl>
                                           </div>
@@ -259,13 +259,13 @@
                                       <div class="card-body">
                                           <div>
                                             <dl>
-                                              <dt style="color:#5c73e7;"> <small> آدرس </small> </dt>
+                                              <dt style="color:#f56f11;"> <small> آدرس </small> </dt>
                                               <dd style="text-align:center"> {{ user.profile.address }} </dd>
-                                              <dt style="color:#5c73e7;"><small>  نام بانک  </small> </dt>
+                                              <dt style="color:#f56f11;"><small>  نام بانک  </small> </dt>
                                               <dd style="text-align:center"> {{ user.profile.bank_name }} </dd>
-                                              <dt style="color:#5c73e7;"> <small> نام صاحب حساب </small> </dt>
+                                              <dt style="color:#f56f11;"> <small> نام صاحب حساب </small> </dt>
                                               <dd style="text-align:center"> {{ user.profile.account_holder }} </dd>
-                                              <dt style="color:#5c73e7;"> <small> شماره کارت </small> </dt>
+                                              <dt style="color:#f56f11;"> <small> شماره کارت </small> </dt>
                                               <dd style="text-align:center"> {{ user.profile.cardـnumber }} </dd>
                                             </dl>
                                           </div>
@@ -279,7 +279,7 @@
                                 <div class="col-md-4 col-sm-12">
                                     <div class="card">
                                       <div align="center">
-                                        <p style="color:#5c73e7;"> تصویر کاربر </p>
+                                        <p style="color:#f56f11;"> تصویر کاربر </p>
                                         <img  style="border-radius:18px;" width="60%" src="{{ user.profile.user_photo.url }}" >
                                         <p>  </p>
                                       </div>
@@ -288,7 +288,7 @@
                                 <div class="col-md-4 col-sm-12">
                                     <div class="card">
                                       <div align="center">
-                                        <p style="color:#5c73e7;"> امضاء  </p>
+                                        <p style="color:#f56f11;"> امضاء  </p>
                                         <img  style="border-radius:18px;" width="60%" src="{{ user.profile.signature.url }}" >
                                         <p>  </p>
                                       </div>
@@ -297,7 +297,7 @@
                                 <div class="col-md-4 col-sm-12">
                                     <div class="card">
                                       <div align="center">
-                                        <p style="color:#5c73e7;"> عکس پرسنلی ۳*۴  </p>
+                                        <p style="color:#f56f11;"> عکس پرسنلی ۳*۴  </p>
                                         <img  style="border-radius:18px;" width="60%" src="{{ user.profile.personalـphoto.url }}" >
                                         <p>  </p>
                                       </div>
@@ -400,7 +400,7 @@
                                       <div class="card">
                                         <div align="center">
                                           <br>
-                                          <p style="color:#5c73e7;"> {{ Payment.updated_on }}  </p>
+                                          <p style="color:#f56f11;"> {{ Payment.updated_on }}  </p>
                                           <img  style="border-radius:18px;" width="60%" src="{{ Payment.photo.url }}" >
                                           <p> {{ Payment.descriptions }}  </p>
                                         </div>
@@ -476,7 +476,7 @@
                                         <br>
                                         <p> {{ Submitted_files.title }}  </p>
                                         <a href="{{ Submitted_files.file.url }}" download><button class="btn btn-outline-warning mr-3">Download</button></a>
-                                        <hr> <p style="color:#5c73e7;"> {{ Submitted_files.updated_on }}  </p>
+                                        <hr> <p style="color:#f56f11;"> {{ Submitted_files.updated_on }}  </p>
                                       </div>
                                     </div>
                                 </div>
