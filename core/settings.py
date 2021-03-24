@@ -31,10 +31,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-
     # Our Apps
     'dashboard',
-
     # Third Party - 1) All Auth
     'allauth',
     'allauth.account',
