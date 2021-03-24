@@ -4,7 +4,6 @@ from django.contrib import admin
 from . import models
 
 
-
 admin.site.site_header= " Crop "
 admin.site.site_title= " Crop "
 
