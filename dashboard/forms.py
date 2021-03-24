@@ -8,13 +8,15 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 
+#------------------------------------------------------------------------------
 class PaymentForm(forms.ModelForm):
 	class Meta:
 		model = Payment
 		fields = ['descriptions', 'photo']
 
 
-		
+
+#------------------------------------------------------------------------------
 class ProfileForm(forms.ModelForm):
 	class Meta:
 		model = Profile
@@ -33,6 +35,7 @@ class ProfileForm(forms.ModelForm):
 
 
 
+#------------------------------------------------------------------------------
 class UserForm(UserCreationForm):
 	class Meta:
 		model = User
