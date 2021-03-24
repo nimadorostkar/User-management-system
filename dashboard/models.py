@@ -93,12 +93,20 @@ class Profile(models.Model):
   def save_user_profile(sender, instance, **kwargs):
       instance.profile.save()
 
+
+  def image_tag(self):
+        return format_html("<img width=50 src='{}'>".format(self.user_photo.url))
+
+
   class Meta:
       verbose_name = "پروفایل"
       verbose_name_plural = " پروفایل ها "
 
+
   def __str__(self):
     return "پروفایل : " + str(self.user)
+
+
 
 
 

@@ -10,13 +10,13 @@ admin.site.site_title= " Crop "
 
 
 class NoticeAdmin(admin.ModelAdmin):
-	list_display = ('user','title', 'created_on')
+	list_display = ('title', 'created_on')
 class Submitted_filesAdmin(admin.ModelAdmin):
-	list_display = ('user','title', 'created_on')
+	list_display = ('title', 'created_on')
 class PaymentAdmin(admin.ModelAdmin):
-	list_display = ('user','descriptions','created_on')
+	list_display = ('descriptions','created_on')
 class ProfileAdmin(admin.ModelAdmin):
-	list_display = ('user','national_code','phone','address')
+	list_display = ('image_tag','national_code','phone','address')
 
 
 
