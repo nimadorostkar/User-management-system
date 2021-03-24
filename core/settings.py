@@ -36,10 +36,10 @@ INSTALLED_APPS = [
     # Third Party - 1) All Auth
     'allauth',
     'allauth.account',
-    'allauth.socialaccount'
-    #'allauth.socialaccount.providers.facebook',
-    #'allauth.socialaccount.providers.google',
-    #'allauth.socialaccount.providers.twitter',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.twitter'
 ]
 
 MIDDLEWARE = [
@@ -139,8 +139,27 @@ STATICFILES_DIRS = [
 ]
 
 
+'''
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'joinus@joinourstory.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = "nimadorostkar97@gmail.com"
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+# ------- for smtp ------
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'nimadorostkar97@gmail.com'
+EMAIL_HOST_PASSWORD = '--- your pass -----'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 '''
+
 # Required for all-auth
 SITE_ID = 1
 
@@ -169,20 +188,21 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
-'''
+
 
 
 
 
 # Email Backend - Currently set at console/terminal
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Custom Settings - allauth
 LOGIN_REDIRECT_URL = "/"
 
 
 
-'''
+
 # Alphavantage key
 ALPHAVANTAGE_KEY1 = str(os.getenv('ALPHAVANTAGE_KEY1'))
 ALPHAVANTAGE_KEY2 = str(os.getenv('ALPHAVANTAGE_KEY2'))
@@ -191,4 +211,3 @@ ALPHAVANTAGE_KEY4 = str(os.getenv('ALPHAVANTAGE_KEY4'))
 ALPHAVANTAGE_KEY5 = str(os.getenv('ALPHAVANTAGE_KEY5'))
 ALPHAVANTAGE_KEY6 = str(os.getenv('ALPHAVANTAGE_KEY6'))
 ALPHAVANTAGE_KEY7 = str(os.getenv('ALPHAVANTAGE_KEY7'))
-'''
