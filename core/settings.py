@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     # Our Apps
-    'dashboard',
+    'dashboard.apps.DashboardConfig',
     # Third Party - 1) All Auth
     'allauth',
     'allauth.account',
