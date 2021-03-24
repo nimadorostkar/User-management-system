@@ -21,6 +21,9 @@
 
         <script src="https://www.chartjs.org/dist/2.9.4/Chart.min.js"></script>
 
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+
+
         <style>
             .tabcontent {
                 display: none;
@@ -326,8 +329,8 @@
                                                             <h4 class="modal-title"> تکمیل مشخصات </h4>
                                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                         </div>
-                                                        <div class="modal-body">
-                                                             <form method="post" enctype="multipart/form-data">
+                                                        <div style="text-align:right; direction:rtl " class="modal-body">
+                                                             <form class="well form-horizontal" method="post" enctype="multipart/form-data">
                                                                   {% csrf_token %}
                                                                   {{ user_form.as_p }}
                                                                   {{ profile_form.as_p }}
