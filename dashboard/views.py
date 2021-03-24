@@ -22,6 +22,7 @@ def dashboard(request):
   profile = models.Profile.objects.filter(user=request.user)
   notices = models.Notice.objects.filter(user=request.user).order_by('-created_on')
   payment = models.Payment.objects.filter(user=request.user).order_by('-created_on')
+  submitted_files = models.Submitted_files.objects.filter(user=request.user).order_by('-created_on')
 
   if request.method == 'POST':
         user_form = UserForm(request.POST, instance=request.user)
@@ -30,7 +31,7 @@ def dashboard(request):
             user_form.save()
             profile_form.save()
             messages.success(request, _('Your profile was successfully updated!'))
-            context = {'profile': profile,'notices': notices,'payment': payment,'user_form': user_form,'profile_form': profile_form }
+            context = {'profile': profile,'notices': notices,'payment': payment, 'submitted_files':submitted_files, 'user_form': user_form,'profile_form': profile_form }
             return render(request, 'dashboard/dashboard.html', context)
         else:
             messages.error(request, _('Please correct the error below.'))
@@ -43,6 +44,7 @@ def dashboard(request):
   'notices': notices,
   'payment': payment,
   'user_form': user_form,
+  'submitted_files':submitted_files,
   'profile_form': profile_form }
   return render(request, 'dashboard/dashboard.html', context)
 
