@@ -153,8 +153,8 @@ SOCIALACCOUNT_PROVIDERS = {
     },
     'google': {
         'APP': {
-            'client_id': str(os.getenv('820701086723-kllb69839qda9fjfhhrotnj0cmnnonvd.apps.googleusercontent.com')),
-            'secret': str(os.getenv('79NBphGuwvUq7JsVYkt8qdtu')),
+            'client_id': '820701086723-kllb69839qda9fjfhhrotnj0cmnnonvd.apps.googleusercontent.com',
+            'secret': '4rbVyWPGfAxrGmFq98kzPFOp',
             'key': ''
         }
     },
