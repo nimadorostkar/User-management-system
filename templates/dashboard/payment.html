@@ -14,7 +14,7 @@
 
 
       <div class="container">
-        <h2> بارگذاری فیش پرداخت </h2> <hr>
+        <h2 style="text-align:center"> بارگذاری فیش پرداخت </h2> <hr>
         <form class="form-horizontal" method="post" enctype="multipart/form-data">
           <div class="form-group">
             <div class="col-sm-10">
@@ -22,12 +22,22 @@
               {{ payment_form.as_p }}
               <br>
               <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-primary w-md"> ذخیره </button>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                  <button type="submit" class="btn btn-success btn-block"> ذخیره </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
               </div>
             </div>
           </div>
         </form>
       </div>
+
 
 
   </body>
