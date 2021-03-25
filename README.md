@@ -1,17 +1,9 @@
 # User-Management-System. (User interaction)
 
 ## Motivation
-- In these unprecedented times many people have lost their wealth because of wrong investment decisions made, which are encouraged by human emotions.
-- A strong system built on back-tested data would drive away human emotions and help people to make the right investment decision purely based on algorithms and statistics.
-- Less than 1.5% of people in India invest in the stock markets and the majority lack knowledge in terms of the right stocks to invest and how to manage their portfolios efficiently.
-- Our aim is to build a strong portfolio management system which would encourage more people to invest in the markets and make the right investment decisions.
+-User interaction django web application for send and receive text and file information.
+-profile dashboard for users.
 
-## Idea
-Design and create a portfolio management system which aims to :
-- Maximize the alpha (returns) and minimize the risk.
-- Implement various trading & investing strategies using technical & fundamental analysis.
-- Optimize strategies using machine learning algorithms.
-- Use Algorithmic Trading to remove the psychological & emotional bias faced during the investment process.
 
 
 
