@@ -1,4 +1,4 @@
-# Portfolio-Management-System
+# User-Management-System. (User interaction)
 
 ## Motivation
 - In these unprecedented times many people have lost their wealth because of wrong investment decisions made, which are encouraged by human emotions.
