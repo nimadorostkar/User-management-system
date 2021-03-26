@@ -24,7 +24,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'grappelli',  # Django Grappelli , A BEAUTIFUL CONTENT MANAGEMENT INTERFACE
+    'grappelli',  # Django Grappelli , A BEAUTIFUL CONTENT MANAGEMENT  ---  https://grappelliproject.com
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
