@@ -140,26 +140,7 @@ STATICFILES_DIRS = [
 ]
 
 
-'''
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'joinus@joinourstory.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = "nimadorostkar97@gmail.com"
-ACCOUNT_AUTHENTICATION_METHOD = 'username'
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_UNIQUE_EMAIL = True
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-# ------- for smtp ------
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'nimadorostkar97@gmail.com'
-EMAIL_HOST_PASSWORD = '--- your pass -----'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-
-'''
 
 # Required for all-auth
 SITE_ID = 1
@@ -176,8 +157,8 @@ SOCIALACCOUNT_PROVIDERS = {
     },
     'google': {
         'APP': {
-            'client_id': '820701086723-kllb69839qda9fjfhhrotnj0cmnnonvd.apps.googleusercontent.com',
-            'secret': '4rbVyWPGfAxrGmFq98kzPFOp',
+            'client_id': '',
+            'secret': '',
             'key': ''
         }
     },
@@ -194,21 +175,26 @@ SOCIALACCOUNT_PROVIDERS = {
 
 
 
-# Email Backend - Currently set at console/terminal
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+ACCOUNT_AUTHENTICATION_METHOD = ("username")
+#ACCOUNT_EMAIL_VERIFICATION = ("none")
+ACCOUNT_EMAIL_VERIFICATION = ('mandatory')
+ACCOUNT_SIGNUP_PASSWORD_VERIFICATION  = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = True
+EMAIL_CONFIRMATION_SIGNUP = True
+ACCOUNT_EMAIL_REQUIRED =True
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_URL = '/'
+ACCOUNT_LOGOUT_ON_GET =False
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+SOCIALACCOUNT_QUERY_EMAIL = (ACCOUNT_EMAIL_REQUIRED)
+SOCIALACCOUNT_AUTO_SIGNUP = True
+SOCIALACCOUNT_AVATAR_SUPPORT = ( 'avatar' in INSTALLED_APPS)
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = DEFAULT_FROM_EMAIL = SERVER_EMAIL = '--email--'
+EMAIL_HOST_PASSWORD = '--pass--'
+EMAIL_PORT = 587
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-# Custom Settings - allauth
-LOGIN_REDIRECT_URL = "/"
 
-
-
-
-# Alphavantage key
-ALPHAVANTAGE_KEY1 = str(os.getenv('ALPHAVANTAGE_KEY1'))
-ALPHAVANTAGE_KEY2 = str(os.getenv('ALPHAVANTAGE_KEY2'))
-ALPHAVANTAGE_KEY3 = str(os.getenv('ALPHAVANTAGE_KEY3'))
-ALPHAVANTAGE_KEY4 = str(os.getenv('ALPHAVANTAGE_KEY4'))
-ALPHAVANTAGE_KEY5 = str(os.getenv('ALPHAVANTAGE_KEY5'))
-ALPHAVANTAGE_KEY6 = str(os.getenv('ALPHAVANTAGE_KEY6'))
-ALPHAVANTAGE_KEY7 = str(os.getenv('ALPHAVANTAGE_KEY7'))
