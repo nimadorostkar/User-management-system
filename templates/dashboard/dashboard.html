@@ -8,9 +8,9 @@
         <title> Crop | Dashboard </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesbrand" name="author" />
+        <meta content="crop user management system" name="nima dorostkar" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{% static 'dashboard/images/favicon.ico' %}">
+        <link rel="shortcut icon" href="{% static 'dashboard/images/logo.png' %}">
 
         <!-- Bootstrap Css -->
         <link href="{% static 'dashboard/css/bootstrap.min.css' %}" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -58,10 +58,10 @@
                         <div class="navbar-brand-box">
                             <a href="{% url 'dashboard' %}" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="{% static 'dashboard/images/logo.png' %}" alt="" height="40">
+                                    <img src="{% static 'account/img/logo.png' %}" alt="" height="40">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="{% static 'dashboard/images/logo.png' %}" alt="" height="65">
+                                    <img src="{% static 'account/img/logo.png' %}" alt="" height="65">
                                 </span>
                             </a>
                         </div>
@@ -162,9 +162,9 @@
                                         <div class="card-body">
                                              <h4 class="card-title mb-4">{{ Notice.title }}</h4>
                                              <div class="table-responsive">
-                                                <pre class="text-muted mb-0">{{ Notice.content }}</pre>
+                                                <p style="text-align:right; direction:rtl" class="text-muted mb-0">{{ Notice.content|linebreaks }}</p>
                                                 <br>
-                                                <p style="text-align:left"> <small> {{ Notice.updated_on }} </small> </p>
+                                                <p  style="text-align:left"> <small> {{ Notice.updated_on }} </small> </p>
                                               </div>
                                         </div>
                                     </div>
